@@ -13,7 +13,7 @@ Designing a schema is an important part of designing and planning programs that 
 
 ## Design Recipe
 
-You can follow steps from this [Design Recipe](../resources/single_table_design_recipe_template.ed.md) to design the schema for a single table. The outline is:
+You can follow steps from this [Design Recipe](../resources/single_table_design_recipe_template.md) to design the schema for a single table. The outline is:
 
 1. List all the nouns
 2. Decide whether a noun is an entity (the table name) or a property of it (a column).

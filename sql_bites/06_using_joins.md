@@ -8,7 +8,7 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to write `SELECT` SQL queries with a `JOIN` to query data from two tables.
 
-*Before moving ahead, make sure you're comfortable with [running `SELECT` queries from one table.](./03_querying_data.ed.md)*
+*Before moving ahead, make sure you're comfortable with [running `SELECT` queries from one table.](./03_querying_data.md)*
 
 ## Introduction
 

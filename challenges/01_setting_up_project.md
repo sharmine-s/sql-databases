@@ -23,7 +23,7 @@ This project will use a few components:
   This class acts as a thin layer with methods to connect to PostgreSQL and send SQL queries to it.
 
 
-[To set up your project follow this guide.](../pills/setting_up_database_project.ed.md)
+[To set up your project follow this guide.](../pills/setting_up_database_project.md)
 
 Then move on to the next step.
 
