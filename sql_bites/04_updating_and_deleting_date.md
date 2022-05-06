@@ -45,6 +45,10 @@ DELETE FROM [table name] WHERE [conditions];
 DELETE FROM [table name];
 ```
 
+## Demonstration
+
+@TODO Here's a video demonstration.
+
 ## Exercise
 
 Update the `release_year` of the album with ID `3` to `1972`.

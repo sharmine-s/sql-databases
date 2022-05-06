@@ -119,6 +119,10 @@ You've probably noticed the two columns having `id` in their name, and storing o
   5 | Bossanova            |         1 |                                
 ```
 
+## Demonstration
+
+@TODO Here's a video demonstration.
+
 ## Exercise Two
 
 Use a filtered `SELECT` statement to list only the `release_year` of the album with title `'Bossanova'`.

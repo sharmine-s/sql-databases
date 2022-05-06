@@ -41,11 +41,20 @@ Some of these challenges include [Process Feedback Challenges](https://github.co
 
 <!-- OMITTED -->
 
-### Phase Three: Solo challenge
+### Phase Three: Solo Project
 
 Do this project solo. It is designed to help you test all of your skills for this module.
 
+[Shop Manager](./projects/shop_project.md)
+
+### Phase Four: Challenge Project
+
+Optionally, do this extra tricky challenge project designed for engineers who reach the end of the sequence and want to really test their skills.
+
 @TODO
+
+
+
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 

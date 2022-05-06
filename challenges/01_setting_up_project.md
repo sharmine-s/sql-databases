@@ -7,11 +7,7 @@ Learn to setup a Ruby project with a database connection wrapper.
 
 ## Intro
 
-In this series of challenges you will build a project in a series of steps.
-
-Before we get started, you'll need to set up a new RSpec project. Feel free to
-create new projects whenever you like to organise your work across these
-challenges.
+In this series of challenges you will build a few different projects. Before we get started, you'll need to set up a new RSpec project.
 
 This project will use a few components:
 
@@ -22,12 +18,13 @@ This project will use a few components:
 * **A class `DatabaseConnection`**  
   This class acts as a thin layer with methods to connect to PostgreSQL and send SQL queries to it.
 
-
 [To set up your project follow this guide.](../pills/setting_up_database_project.md)
 
 Then move on to the next step.
 
 ## The `DatabaseConnection` class
+
+Let's focus for a bit on the `DatabaseConnection` class:
 
 ```ruby
 # file: lib/database_connection.rb
@@ -39,17 +36,23 @@ require 'pg'
 # with the database using SQL.
 
 class DatabaseConnection
+  # This method connects to PostgreSQL using the 
+  # PG gem. We connect to 127.0.0.1, and select
+  # the database name given in argument.
   def self.connect(database_name)
     @connection = PG.connect({ host: '127.0.0.1', dbname: database_name })
   end
 
+  # This method executes an SQL query 
+  # on the database, providing some optional parameters
+  # (you will learn a bit later about when to provide these parameters).
   def self.exec_params(query, params)
     @connection.exec_params(query, params)
   end
 end
 ```
 
-The important part is the method `exec_params`. This will transform the result set returned by the database into an array of hashes.
+The important part is the method `exec_params` we call on the `@connection` object. This will transform the result set returned by the database into an array of hashes.
 
 ```ruby
 # EXAMPLE
@@ -87,7 +90,11 @@ The important part is the method `exec_params`. This will transform the result s
 
 ## The main file
 
-Create a file `app.rb` at the root of the project.
+Create a file `app.rb` at the root of the project. This file will be the "entrypoint" of the program — it is the file you will execute with the `ruby` command.
+
+Its job is to connect to the database using `DatabaseConnection.connect`, and then execute whatever logic the program needs to do.
+
+In the example below, we simply execute a `SELECT` SQL query on the database and print the returned result set.
 
 ```ruby
 # file: app.rb

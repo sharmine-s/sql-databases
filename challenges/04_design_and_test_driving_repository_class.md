@@ -7,7 +7,7 @@ Learn to test-drive a "Repository" class method to SELECT a single record from t
 
 ## Intro
 
-You previously learned how to test-drive a Repository class method to retrieve all records from a table (usually we'd name this method `all`). 
+You previously learned how to test-drive a Repository class method to retrieve all records from a table (usually we name this method `all`). 
 
 In this section, you will learn how to test-drive a method `find` that selects a single record using its id.
 

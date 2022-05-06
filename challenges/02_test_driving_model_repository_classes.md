@@ -13,7 +13,7 @@ To achieve this, you will learn how to build two kind of classes — they're reg
 * A **Model** class represent the shape of our database record.   
   For example, if we have one table `students`, we'd have a class `Student` with attributes for each column. It usually doesn't contain any logic, but is only used to store data.
 
-* A **Repository** class implements methods to retrieve, create, update or delete data to/from the database. 
+* A **Repository** class implements methods to retrieve, create, update or delete data to/from the database.  
   For example, if we have one table `students`, we'd have a class `StudentRepository` containing methods that communicates with the database using SQL.
 
 ```ruby
@@ -52,17 +52,17 @@ You can follow steps from this [Design Recipe](../resources/repository_class_rec
 
 *You will use the same database you've worked with in the previous SQL bites, `music_library`.*
 
-Create a new project `music_library` for this exercise.
+Create a new project `music_library` for this exercise, [following the guidance](../pills/setting_up_database_project.ed.md).
 
-1. Copy the [Design Recipe Template](../resources/repository_class_recipe_template.md) and adapt it to test-drive and implement the two classes for the `albums` table (ignore the `artists` table, for now). 
+1. Copy the [Design Recipe Template](../resources/repository_class_recipe_template.md) and adapt it to test-drive and implement the two classes for the `albums` table. 
 
-    **You should skip step 1**, as the table has already been created in your database.
+    **You should skip step 1**, as the table is already created in your database.
 
 @TODO video solution
 
-### Trying out with a small program
+### Using the class in `app.rb`
 
-We can write a small program in a file `app.rb` to print out the records:
+We can write a small program in the main file `app.rb` to print out the records:
 
 ```ruby
 # file: app.rb
@@ -71,7 +71,7 @@ require_relative 'lib/database_connection'
 require_relative 'lib/album'
 require_relative 'lib/album_repository'
 
-DatabaseConnection.connect('design')
+DatabaseConnection.connect('music_library')
 
 repository = AlbumRepository.new
 
@@ -93,7 +93,7 @@ Work in the same project directory `music_library` for this exercise.
 ## Challenge
 
 To work on this challenge, first:
-  * Setup a new project directory `book_store`.
+  * Setup a new project directory `book_store` [following the guidance](../pills/setting_up_database_project.ed.md).
   * Create a new database `book_store`.
   * [Import this SQL seed into that new database.](../resources/seeds/book_store.sql)
 
@@ -101,7 +101,8 @@ Then:
 1. [Use the design recipe to test-drive](../resources/repository_class_recipe_template.md) and implement the classes `Book` and `BookRepository`.
 2. Write a small program in `app.rb` using the class `BookRepository` to print out the list of books to the terminal. You should get an output that looks roughly like this:
 
-```
+```bash
+# In the project directory book_store
 $ ruby app.rb
 
 1 - Nineteen Eighty-Four - George Orwell

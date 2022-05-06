@@ -120,6 +120,10 @@ SELECT albums.id AS album_id, artists.id AS artist_id, albums.title, artists.nam
   WHERE artists.name = 'ABBA';
 ```
 
+## Demonstration
+
+@TODO Here's a video demonstration.
+
 ## Exercise One
 
 Select the `id` and `title` of all the albums from Taylor Swift.

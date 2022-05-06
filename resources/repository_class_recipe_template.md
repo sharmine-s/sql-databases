@@ -151,13 +151,41 @@ students[1].cohort_name # ==> 'May 2022'
 
 Encode this example as a test.
 
-## 8. Implement the behaviour
+## 8. Reload the SQL seeds before each test run
+
+Running the SQL code present in the seed file will empty the table and re-insert the seed data.
+
+This is so you get a fresh table contents every time you run the test suite.
+
+```ruby
+# EXAMPLE
+
+# file: spec/student_repository_spec.rb
+
+def reset_students_table
+  seed_sql = File.read('spec/seeds_students.sql')
+  connection = PG.connect({ host: '127.0.0.1', dbname: 'students' })
+  connection.exec(seed_sql)
+end
+
+describe StudentRepository do
+  before(:all) do 
+    reset_students_table
+  end
+
+  # (your tests will go here).
+end
+```
+
+## 9. Implement the behaviour
 
 ```ruby
 # EXAMPLE
 
 # Replace any relevant elements of this example
 # with your own design.
+
+# file: lib/student_repository.rb
 
 class StudentRepository
   

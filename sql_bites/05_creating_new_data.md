@@ -25,6 +25,10 @@ INSERT INTO artists
   VALUES('Massive Attack', 'Alternative');
 ```
 
+## Demonstration
+
+@TODO Here's a video demonstration.
+
 ## Exercise
 
 1. `INSERT` a new record in `albums` with title 'Mezzanine', and release year 1998.

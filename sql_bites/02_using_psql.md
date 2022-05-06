@@ -67,7 +67,7 @@ You can now exit the REPL with `\q`.
 
 ## Importing the seed data
 
-In the following sections, you will work using seed data provided by us, with tables that have already created. This is the file `music_database.sql` present in this directory.
+In the following sections, you will work using seed data provided by us, with tables that have already been created. All the needed SQL is in the file [`music_database.sql`](../resources/seeds/music_database.sql) present in this directory.
 
 You can have a look at this file if you'd like. It contains SQL queries to:
   * create the tables (the *structure*)
@@ -98,6 +98,10 @@ CREATE TABLE
 INSERT 0 12
 INSERT 0 4
 ```
+
+## Demonstration
+
+@TODO Here's a video demonstration.
 
 ## Exercise
 

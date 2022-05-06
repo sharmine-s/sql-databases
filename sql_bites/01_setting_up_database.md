@@ -52,6 +52,10 @@ $ brew services start postgresql
 
 If you have a different system, [follow the relevant instructions](https://www.postgresql.org/download/), and you're not sure, ask your coach. If you have any trouble with the installation process, it's probably better to ask your coach for help, rather than spending too much time figuring it out.
 
+## Demonstration
+
+@TODO Here's a video demonstration.
+
 [Next Challenge](02_using_psql.md)
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->

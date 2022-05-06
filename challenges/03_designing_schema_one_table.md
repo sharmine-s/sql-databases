@@ -9,13 +9,15 @@ Learn to design and create a schema with a single table.
 
 So far you've been working with tables already designed and created for you. In this section you'll learn how to design a table schema (which columns and types it contains) from plain English user stories. Often, this design step will happen before you write the program that needs to interact with the database. Later on, as more features and changes are added to the program, this schema will likely evolve.
 
-Designing a schema is an important part of designing and planning programs that need to use a database. As always, there can be different approaches to this, with different tradeoffs depending on the situation. This module presents a few design recipes to follow for simple situations.
+Designing a schema is an important part of designing and planning programs that need to use a database. As always, there can be different approaches to this, with different tradeoffs depending on the situation.
+
+This module presents a few design recipes to follow for simple situations. Let's have a look at the first one.
 
 ## Design Recipe
 
 You can follow steps from this [Design Recipe](../resources/single_table_design_recipe_template.md) to design the schema for a single table. The outline is:
 
-1. List all the nouns
+1. List all the nouns from the specification or user stories.
 2. Decide whether a noun is an entity (the table name) or a property of it (a column).
 3. Decide the column types.
 4. Write the SQL to create the table.
@@ -30,7 +32,7 @@ You can follow steps from this [Design Recipe](../resources/single_table_design_
 
 You should create a new database `student_directory_1` for this exercise.
 
-Infer the table schema from the **third part** of these user stories.
+Infer the table schema from these user stories.
 ```
 As a coach
 So I can get to know all students
@@ -50,7 +52,7 @@ I want to see a list of students' cohorts.
 
 You should create a new database `movies_directory` for this exercise.
 
-Infer the table schema from the **third part** of these user stories.
+Infer the table schema from these user stories.
 ```
 As a cinephile
 So I can list all my favourite movies
