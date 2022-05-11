@@ -4,15 +4,19 @@ Learn to setup PostgreSQL.
 
 ## Introduction
 
-So far, you've been storing your program's data in memory — as instance variables, arrays, hashes, etc. If we exit the program, all the data is lost, which is not great if we're looking to keep data for the long terms (think bank accounts, user accounts, order history...). This week you'll learn how to use a database to store data used by our programs.
+Up until now, you've been storing your program's data in memory — as instance variables, arrays, hashes, etc. If we exit the program, all the data is lost, which is not great if we need to store data for the long term (think bank accounts, user accounts, order history...).
+
+This week, you'll learn how to use a database to store data used by programs.
 
 There are many types of databases, but this week you'll learn how to use **PostgreSQL**, which is a **relational database**. PostgreSQL is free and open-source, and is also widely used in a lot of large-scale, professional applications, which makes it the perfect choice for a first database to learn with.
 
-## Overview of a relational database
+## About relational databases
 
-A **relational database** stores data in **tables**. For example, if our application needs to store **students**, we'd have a table named "students".
+A **relational database** stores data in **tables**. For example, if our application needs to store **students** information, we'd have a table named "students".
 
-A table has **columns** for the attributes, which are fixed and the same for each record (unless we're changing the schema of this table later). Each record is a **row** in the table.
+A table has **columns** for the attributes of the "things" it records, which are fixed and the same for each record (unless we're changing the schema of this table later). Each record is a **row** in the table.
+
+For example, a table "students" could have columns "name" and "cohort_name".
 
 Here's an example of how such a table would look like:
 
@@ -27,7 +31,7 @@ Table: students
   4 | Ali          | April 2022
 ```
 
-*(By convention, table names and column names are always lowercase, using underscores to separate words).*
+*(By convention, table names and column names are **always lowercase**, using underscores to separate words). Table names are always plural*
 
 You will first learn how to query records from such a table, and then create, update and delete records.
 

@@ -1,8 +1,12 @@
 # Test-driving a Repository class with two related Models
 
-Learn to test-drive "Model" and "Repository" classes to SELECT related records from the database.
+_**This is a Makers Bite.** Bites are designed to train specific skills or
+tools. They contain an intro, a demonstration video, some exercises with an
+example solution video, and a challenge without a solution video for you to test
+your learning. [Read more about how to use Makers
+Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
-_Make sure you've worked with `JOIN` queries before starting this section. If you need a refresher, spend a bit of time revisiting it._
+Learn to test-drive "Model" and "Repository" classes to SELECT related records from the database.
 
 ## Intro
 
@@ -123,7 +127,9 @@ end
 
 ## Exercise
 
-Use the database `student_directory_2` from the previous section. If you didn't design and create the tables yourself, download the SQL exemplar and load it into the database.
+Use the database `student_directory_2` from the previous section.
+
+If you didn't design and create the tables yourself, download the SQL exemplar and load it into the database.
 
 1. Test-drive and implement the three classes for the `students` and `cohorts` table.   
   You should end up with three classes:
@@ -133,20 +139,26 @@ Use the database `student_directory_2` from the previous section. If you didn't 
 
 2. Write a small program in `app.rb` using the class `CohortRepository` to print out the data of one cohort with its students to the terminal.
 
+@TODO video
+
 ## Challenge
 
-Use the database `blog` from the previous section. If you didn't design and create the tables yourself, download the SQL exemplar and load it into the database.
+Use the database `blog` from the previous section.
+
+If you didn't design and create the tables yourself, download the SQL exemplar and load it into the database.
 
 1. Test-drive and implement the three classes for the `posts` and `comments` table.
 
 2. Write a small program in `app.rb` using the class `PostRepository` to print out the data of one post with its comments to the terminal.
+
+[Next Challenge](03_using_joins_with_many_to_many.md)
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 
 ---
 
 **How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=challenges/07_test_driving_repository_class_with_join.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=challenges/07_test_driving_repository_class_with_join.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=challenges/07_test_driving_repository_class_with_join.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=challenges/07_test_driving_repository_class_with_join.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=challenges/07_test_driving_repository_class_with_join.md&prefill_Sentiment=😀)  
+[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/02_test_driving_repository_class_with_join.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/02_test_driving_repository_class_with_join.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/02_test_driving_repository_class_with_join.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/02_test_driving_repository_class_with_join.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/02_test_driving_repository_class_with_join.md&prefill_Sentiment=😀)  
 Click an emoji to tell us.
 
 <!-- END GENERATED SECTION DO NOT EDIT -->

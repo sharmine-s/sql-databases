@@ -1,20 +1,29 @@
 # Test-driving Model and Repository classes
 
-_**This is a Makers Vine.** Vines are designed to gradually build up sophisticated skills. They contain a mixture of text and video, and may contain some challenge exercises without proposed solutions. [Read more about how to use Makers
+_**This is a Makers Vine.** Vines are designed to gradually build up sophisticated skills.
+They contain a mixture of text and video, and may contain some challenge exercises without
+proposed solutions. [Read more about how to use Makers
 Vines.](https://github.com/makersacademy/course/blob/main/labels/vines.md)_
 
 Learn to test-drive "Model" and "Repository" classes to SELECT records from the database.
 
 ## Introduction
 
-In the realm of PostgreSQL, we manipulate tables, column names and records. However, in Ruby programs, we represent data using classes, instances and instance variables. We therefore need a way to "transform" the data retrieved from the database into data that can be used by our program. 
+In the realm of PostgreSQL, we manipulate tables, column names and records. However, in
+Ruby programs, we represent data using classes, instances and instance variables. We
+therefore need a way to "transform" the data retrieved from the database into data that
+can be used by our program. 
 
-To achieve this, you will learn how to build two kind of classes — they're regular Ruby classes, but designed to achieve a specific purpose in our program:
-* A **Model** class represent the shape of our database record.   
-  For example, if we have one table `students`, we'd have a class `Student` with attributes for each column. It usually doesn't contain any logic, but is only used to store data.
+To achieve this, you will learn how to build two kind of classes — they're regular Ruby
+classes, but designed to achieve a specific purpose in our program:
+* A **Model** class is used to store a record's data.   
+  For example, if we have a table `students`, we'd have a class `Student`, with attributes
+  for each column. It usually doesn't contain any logic, but is only used to store data.
 
-* A **Repository** class implements methods to retrieve, create, update or delete data to/from the database.  
-  For example, if we have one table `students`, we'd have a class `StudentRepository` containing methods that communicates with the database using SQL.
+* A **Repository** class implements methods to retrieve, create, update or delete data
+  to/from the database.  
+  For example, if we have one table `students`, we'd have a class `StudentRepository`
+  containing methods that communicates with the database using SQL.
 
 ```ruby
 # Example:
@@ -30,15 +39,36 @@ new_student.cohort_name = 'March 22'
 repository.create(new_student) # Creates a new student by performing a INSERT query.
 ```
 
-This technique (converting records from a database into objects we use in our program) is also called **object-relational mapping**.
+This technique (converting records from a database into objects we use in our program) is
+also called **object-relational mapping**.
 
-## Design Recipe
+## Designing a Repository class
 
-You can follow steps from this [Design Recipe](../resources/repository_class_recipe_template.md) to design, test-drive and implement these two classes for a given table. The outline is:
+When designing a Repository class, it is good to keep in mind (or better, on a notepad or
+document) the list of methods to implement, alongside the SQL query to run.
+
+Here is an example for the class `StudentRepository` described above.
+
+| Method      |Job| Arguments | SQL query                                     | Returns  |
+| ----------- |----|-----------| ----------------------------------------------|----------|
+| `all`       |Get all students| none      | `SELECT ... FROM students;` | Array of `Student` |
+| `find`      |Get one student by ID| An `id` (number) | `SELECT ... FROM students WHERE id = ...;` | A single `Student` |
+| `create`    |Insert one student| A `Student` instance  | `INSERT INTO students ...` | none |
+
+You can see how we design the methods of the Repository class to use instances of the
+Model class as arguments or return values, and which SQL queries these methods send to the
+database to read, create or update data.
+
+### Design Recipe
+
+You can follow steps from this [Design
+Recipe](../resources/repository_class_recipe_template.md) to design, test-drive and
+implement these two classes for a given table. The outline is:
   1. Design the table and create it in your database.
   2. Infer the class names from the table name.
   3. Implement the Model class.
-  4. Decide on the operations (methods) to implement for the Repository class — here we'll start with the simplest - querying all records.
+  4. Decide on the operations (methods) to implement for the Repository class — here we'll
+     start with the simplest - querying all records.
   5. Write the SQL queries for each operation.
   6. Write a SQL data seed and insert it.
   7. Encode a RSpec test example for one method.
@@ -50,59 +80,50 @@ You can follow steps from this [Design Recipe](../resources/repository_class_rec
 
 ## Exercise One
 
-*You will use the same database you've worked with in the previous SQL bites, `music_library`.*
+Work in the same project directory `music_library` for this exercise.
 
-Create a new project `music_library` for this exercise, [following the guidance](../pills/setting_up_database_project.ed.md).
-
-1. Copy the [Design Recipe Template](../resources/repository_class_recipe_template.md) and adapt it to test-drive and implement the two classes for the `albums` table. 
+1. Copy the [Design Recipe Template](../resources/repository_class_recipe_template.md) and
+   adapt it to test-drive and implement the two classes for the `albums` table. 
 
     **You should skip step 1**, as the table is already created in your database.
 
+2. Write a small program in `app.rb` using the class `AlbumRepository` to print out the
+   list of albums to the terminal.
+
 @TODO video solution
 
-### Using the class in `app.rb`
-
-We can write a small program in the main file `app.rb` to print out the records:
-
-```ruby
-# file: app.rb
-
-require_relative 'lib/database_connection'
-require_relative 'lib/album'
-require_relative 'lib/album_repository'
-
-DatabaseConnection.connect('music_library')
-
-repository = AlbumRepository.new
-
-p repository.all
-```
 
 ## Exercise Two
 
 Work in the same project directory `music_library` for this exercise.
 
-1. Copy the [Design Recipe Template](../resources/repository_class_recipe_template.md) and adapt it to test-drive and implement the two classes for the `artists` table.  
+1. Copy the [Design Recipe Template](../resources/repository_class_recipe_template.md) and
+   adapt it to test-drive and implement the two classes for the `artists` table.  
 
     **You should skip step 1**, as the table has already been created in your database.
 
-2. Write a small program in `app.rb` using the class `ArtistRepository` to print out the list of artists to the terminal.
+2. Write a small program in `app.rb` using the class `ArtistRepository` to print out the
+   list of artists to the terminal.
 
 @TODO video solution
 
 ## Challenge
 
 To work on this challenge, first:
-  * Setup a new project directory `book_store` [following the guidance](../pills/setting_up_database_project.ed.md).
+  * Setup a new project directory `book_store` [following the
+    guidance](../pills/setting_up_database_project.ed.md).
   * Create a new database `book_store`.
   * [Import this SQL seed into that new database.](../resources/seeds/book_store.sql)
 
 Then: 
-1. [Use the design recipe to test-drive](../resources/repository_class_recipe_template.md) and implement the classes `Book` and `BookRepository`.
-2. Write a small program in `app.rb` using the class `BookRepository` to print out the list of books to the terminal. You should get an output that looks roughly like this:
+1. Copy the [Design Recipe Template](../resources/repository_class_recipe_template.md) and
+   adapt it to test-drive and implement the two classes for the `books` table. Since the table is already created, so you can skip step 1.
+2. Write a small program in `app.rb` using the class `BookRepository` to print out the
+   list of books to the terminal. You should get an output that looks roughly like this:
 
 ```bash
 # In the project directory book_store
+
 $ ruby app.rb
 
 1 - Nineteen Eighty-Four - George Orwell

@@ -7,13 +7,15 @@ Learn to design and create a schema with two tables and a foreign key.
 
 ## Introduction
 
-You've learned previously how to design a schema with a single table. Often, we need to store different kind of records in our programs — for example, albums and artists, for a music library, or posts and comments, for a blogging website.
+You've learned how to design a schema with a single table. You will often need to store different kind of records in our programs — for example, _albums and artists_, for a music library, or _posts and comments_, for a blogging program.
 
-Relational databases allow us to store different kind of records and associate them together, with the use of foreign keys. In this section you'll learn how to design a schema using two related tables from a plain English specification.
+Relational databases allow us to store different kind of records and "link" them together, with the use of foreign keys. In the music library database, albums are associated to their artist record using the `artist_id` foreign key.
+
+In this section you'll learn how to design a schema using two related tables from a plain English specification.
 
 ### Relationship types
 
-In relational databases, there are three different types of relationship possible between two tables. First, you'll learn about **one-to-many**, which is probably the most common type. One record in a table can be associated with many records in another table.   
+In relational databases, there are different types of relationship possible between two tables. First, you'll learn about **one-to-many**, which is probably the most common type. One record in a table can be associated with many records in another table, hence the name.   
 
 Some examples: a musical artist can have many different albums. A country can have many cities. A blog post can have many comments.
 
@@ -61,7 +63,7 @@ So I can get to know all students
 I want to see a list of students' cohorts.
 ```
 
-1. Copy the Design Recipe template and use it to design the schema for the tables.
+1. Copy the Design Recipe template and use it to design the schema for the two tables.
 2. Create the tables by loading the SQL file in `psql`.
 
 @TODO video
@@ -72,7 +74,7 @@ This is a process feedback challenge. That means you should record yourself doin
 
 You should create a new database `blog` for this challenge.
 
-Infer the table schema from the **third part** of these user stories.
+Infer the table schema from these user stories.
 
 1. Copy the Design Recipe template and use it to design the schema for the tables.
 2. Create the tables by loading the SQL file in `psql`.
@@ -89,6 +91,10 @@ I want to write posts having a content.
 As a blogger
 So I can let people comment on interesting stuff
 I want to allow comments on my posts.
+
+As a blogger
+So I can let people comment on interesting stuff
+I want the comments to have a content.
 
 As a blogger
 So I can let people comment on interesting stuff

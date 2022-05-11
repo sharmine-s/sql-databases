@@ -14,13 +14,13 @@ This project will use a few components:
 * **Ruby and RSpec**  
   The programming language and test framework will be the same as what you've previously used.
 * **The `pg` gem**  
-  We'll use this gem (or library) to make our Ruby program send SQL queries to the database, and retrieve the result set.
+  This library allows us to send SQL queries to the database, and retrieve the result set.
 * **A class `DatabaseConnection`**  
   This class acts as a thin layer with methods to connect to PostgreSQL and send SQL queries to it.
 
 [To set up your project follow this guide.](../pills/setting_up_database_project.md)
 
-Then move on to the next step.
+Follow the guidance linked above to create a new project `music_library`. Then move on to the next step.
 
 ## The `DatabaseConnection` class
 
@@ -90,11 +90,7 @@ The important part is the method `exec_params` we call on the `@connection` obje
 
 ## The main file
 
-Create a file `app.rb` at the root of the project. This file will be the "entrypoint" of the program — it is the file you will execute with the `ruby` command.
-
-Its job is to connect to the database using `DatabaseConnection.connect`, and then execute whatever logic the program needs to do.
-
-In the example below, we simply execute a `SELECT` SQL query on the database and print the returned result set.
+Update the main file `app.rb` to send a `SELECT` SQL query to the database (using the `DatabaseConnection` class) and print the returned result set.
 
 ```ruby
 # file: app.rb
@@ -108,7 +104,7 @@ DatabaseConnection.connect('music_library')
 sql = 'SELECT id, title FROM albums;'
 result = DatabaseConnection.exec_params(sql, [])
 
-# Print out each record from the result set .
+# Print out each record from the result set.
 result.each do |record|
   p record
 end
@@ -131,7 +127,11 @@ Run this file with `ruby app.rb`, and you should get the following output:
 {"id"=>"12", "title"=>"Ring Ring"}
 ```
 
+## Troubleshooting
+
 If you get a SQL error, use the error message to find out what went wrong — make sure the database name is correct, and that there are no syntax errors in the SQL query.
+
+If you spent some time debugging this setup, and you're not sure of what is the problem, ask your coach.
 
 [Next Challenge](02_test_driving_model_repository_classes.md)
 

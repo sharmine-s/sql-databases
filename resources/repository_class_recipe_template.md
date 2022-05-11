@@ -1,8 +1,12 @@
 # {{TABLE NAME}} Model and Repository Classes Design Recipe
 
+_Copy this recipe template to design and implement Model and Repository classes for a database table._
+
 ## 1. Design and create the Table
 
-If the table is already created, you can skip this step. Otherwise, design and create the SQL schema for this table.
+If the table is already created in the database, you can skip this step.
+
+Otherwise, [follow this recipe to design and create the SQL schema for your table](./single_table_design_recipe_template.md).
 
 *In this template, we'll use an example table `students`*
 
@@ -10,14 +14,14 @@ If the table is already created, you can skip this step. Otherwise, design and c
 # EXAMPLE
 
 Table: students
-Columns:
 
+Columns:
 id | name | cohort_name
 ```
 
 ## 2. Define the class names
 
-Usually, the Model class will be the capitalised table name (single instead of plural), and then suffixed by `Repository` for the Repository class.
+Usually, the Model class name will be the capitalised table name (single instead of plural). The same name is then suffixed by `Repository` for the Repository class name.
 
 ```ruby
 # EXAMPLE
@@ -46,11 +50,21 @@ Define the attributes of your Model class. You can usually map the table columns
 # (in lib/student.rb)
 
 class Student
+
+  # Replace the attributes by your own columns.
   attr_accessor :id, :name, :cohort_name
 end
+
+# The keyword attr_accessor is a special Ruby feature
+# which allows us to set and get instance variables on an instance,
+# here's an example:
+#
+# student = Student.new
+# student.name = 'Jo'
+# student.name
 ```
 
-*You may chose to test-drive this class, but unless it contains any more logic than the example above, it is not required.*
+*You may choose to test-drive this class, but unless it contains any more logic than the example above, it is probably not needed.*
 
 ## 4. Define the Operations
 
@@ -75,10 +89,10 @@ class StudentRepository
 
   # Selecting all records
   def all
-    # returns an array of `Student` instances.
+    # Needs to return an array of `Student` instances.
   end
 
-  # Add more methods for each operation you'd like to implement.
+  # Add more methods below for each operation you'd like to implement.
 end
 ```
 
@@ -90,19 +104,18 @@ Write the SQL queries for each operation (each method of the Repository class).
 
 *Example: for class `StudentRepository` (table name `students`). Replace this example for your own table and class*
 
-| Method      | SQL                                                  |
-| ----------- | ---------------------------------------------------  |
-| `all`       | `SELECT id, name, cohort_name FROM students;`        |
-|             |                                                      |
-|             | (add more here)                                      |
+| Method      |Job| Arguments | SQL query                                     | Returns  |
+| ----------- |----|-----------| ----------------------------------------------|----------|
+| `all`       |Get all students| none      | `SELECT id, name, cohort_name FROM students;` | Array of `Student` |
+| | | | | |
+| | | | | |
+| (add more here) | | | | |
 
 ## 6. Create Test SQL seeds
 
 Your tests will depend on data stored in PostgreSQL to run.
 
-If the seed data is provided (or you already created it), you can skip this test.
-
-If you need to create some, the simplest way is to create some fake data using `psql` or another software, and then export the data as SQL.
+If seed data is provided (or you already created it), you can skip this step.
 
 ```sql
 -- EXAMPLE
@@ -123,13 +136,15 @@ INSERT INTO students (name, cohort_name) VALUES ('David', 'April 2022');
 INSERT INTO students (name, cohort_name) VALUES ('Anna', 'May 2022');
 ```
 
-Run this SQL file on the database to truncate (empty) the table, and insert the seed data.
+Run this SQL file on the database to truncate (empty) the table, and insert the seed data. Be mindful of the fact any existing records in the table will be deleted.
 
 ```bash
 psql -h 127.0.0.1 your_database_name < seeds_{table_name}.sql
 ```
 
 ## 7. Define a Test Example
+
+Write Ruby code that defines the expected behaviour of the Repository class, following your design from the table written in step 5.
 
 ```ruby
 # EXAMPLE
@@ -179,6 +194,10 @@ end
 
 ## 9. Implement the behaviour
 
+Below is an example of a possible implementation for the method `all` of the class `StudentRepository`.
+
+Your implementation will depend on your own design, method and table structure.
+
 ```ruby
 # EXAMPLE
 
@@ -205,7 +224,10 @@ class StudentRepository
       # Create a new model instance
       # with the record data.
       student = Student.new
-      student.id = record['id']
+
+      # the PG library returns all values as string,
+      # so we need to manually convert the id to an integer.
+      student.id = record['id'].to_i
       student.name = record['name']
       student.cohort_name = record['cohort_name']
 

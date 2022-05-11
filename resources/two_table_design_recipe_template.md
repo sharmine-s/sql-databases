@@ -1,5 +1,7 @@
 # Two Tables Design Recipe Template
 
+_Copy this recipe template to design and create two related database tables from a specification._
+
 ## 1. Extract nouns from the user stories or specification
 
 ```
@@ -80,7 +82,7 @@ You'll then be able to say that:
 
 1. **[A] has many [B]**
 2. And on the other side, **[B] belongs to [A]**
-3. In that case, the foreign key is in the table `[]
+3. In that case, the foreign key is in the table [B]
 
 Replace the relevant bits in this example with your own:
 
@@ -109,13 +111,13 @@ Replace the relevant bits in this example with your own:
 
 -- Create the table without the foreign key first.
 CREATE TABLE artists (
-  id SERIAL,
+  id SERIAL PRIMARY KEY,
   name text,
 );
 
 -- Then the table with the foreign key first.
 CREATE TABLE albums (
-  id SERIAL,
+  id SERIAL PRIMARY KEY,
   title text,
   release_year int,
 -- The foreign key name is always {other_table_singular}_id

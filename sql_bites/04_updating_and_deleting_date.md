@@ -31,6 +31,8 @@ UPDATE [table name] SET [column_name] = [new_value], [other_column_name] = [othe
 
 ### Updating specific records
 
+We can also use the `WHERE` keyword to specify conditions, like for `SELECT` queries. Only records matching these conditions will be updated.
+
 ```sql
 UPDATE [table name] SET [column_name] = [new_value]
   WHERE [conditions];
@@ -38,10 +40,12 @@ UPDATE [table name] SET [column_name] = [new_value]
 
 ### Deleting records
 
+The `DELETE` query has a slightly different syntax, but works in a similar fashion. Make sure you **always** specify conditions when using `DELETE` (unless you have good reasons not to), to avoid deleting the entire table.
+
 ```sql
 DELETE FROM [table name] WHERE [conditions];
 
--- Or, delete all records (danger zone!)
+-- Or, delete all records (never do this!)
 DELETE FROM [table name];
 ```
 
@@ -51,11 +55,15 @@ DELETE FROM [table name];
 
 ## Exercise
 
-Update the `release_year` of the album with ID `3` to `1972`.
+Update the `release_year` of the album with ID `3` to the value `1972`.
 
 Use a `SELECT` query to get that specific record and verify it has been updated.
 
+## Challenge
 
+Delete the album with ID `12`.
+
+Use a `SELECT` query to get the list of albums and verify that one has been deleted.
 
 [Next Challenge](05_creating_new_data.md)
 

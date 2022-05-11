@@ -1,5 +1,7 @@
 # Single Table Design Recipe Template
 
+_Copy this recipe template to design and create a database table from a specification._
+
 ## 1. Extract nouns from the user stories or specification
 
 ```
@@ -58,7 +60,7 @@ release_year: int
 -- Replace the table name, columm names and types.
 
 CREATE TABLE albums (
-  id SERIAL,
+  id SERIAL PRIMARY KEY,
   title text,
   release_year int
 );

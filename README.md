@@ -22,24 +22,32 @@ Go through these exercises and learn how to setup PostgreSQL and use SQL to read
 3. [Querying data.](./sql_bites/03_querying_data.md)
 4. [Updating or deleting data.](./sql_bites/04_updating_and_deleting_date.md)
 5. [Creating new data.](./sql_bites/05_creating_new_data.md)
-6. [Using joins to query related data.](./sql_bites/06_using_joins.md)
-7. [Using TablePlus](./sql_bites/07_using_table_plus.md)
+6. [Using TablePlus](./sql_bites/06_using_table_plus.md)
 
-### Phase Two
+### Phase Two: Challenges
 
-Go through these exercises and learn how to setup and gradually build a program which communicates to a database.
+Go through these exercises and learn how to setup and gradually build a program which communicates with a database.
 
 Some of these challenges include [Process Feedback Challenges](https://github.com/makersacademy/golden-square/blob/main/pills/process_feedback_challenges.md), in which you record yourself performing the task and share it with your coach for feedback. These are tagged with a 📡.
 
 1. [Setting up a project](./challenges/01_setting_up_project.md).
-2. [Test-driving Model and Repository classes](./challenges/02_test_driving_model_repository_classes.md).
+2. [Designing Model and Repository classes](./challenges/02_test_driving_model_repository_classes.md).
 3. [Designing a schema with one table](./challenges/03_designing_schema_one_table.md).
-4. [Test-driving a Repository class "find" method](./challenges/04_design_and_test_driving_repository_class.md).
+4. [Designing a Repository class "find" method](./challenges/04_test_driving_find_method.md).
 5. [Designing a schema with two related tables](./challenges/05_designing_schema_two_tables.md). 📡.
-6. [Test-driving  a Repository class "write" methods (create and delete)](./challenges/06_test_driving_write_operations.md). 📡.
-7. [Test-driving a Repository class with two related Models](./challenges/07_test_driving_repository_class_with_join.md).
+6. [Designing  a Repository class "write" methods (create and delete)](./challenges/06_test_driving_write_operations.md). 📡.
 
 <!-- OMITTED -->
+
+### Phase Three: Joins and Many-to-Many
+
+This is advanced material. Work on it only if you've completed all the challenges above.
+
+1. [Using SQL joins](./joins/01_using_joins.md)
+2. [Designing a Repository class using joins](./joins/02_test_driving_repository_class_with_join.md).
+3. [Using joins with Many-to-many relationships](./joins/03_using_joins_with_many_to_many.md)
+4. [Designing Many-to-many relationships](./joins/04_designing_many_to_many_relationships.md)
+5. [Designing a Repository class with Many-to-many](./joins/05_repository_classes_many_to_many.md)
 
 ### Phase Three: Solo Project
 
@@ -47,11 +55,6 @@ Do this project solo. It is designed to help you test all of your skills for thi
 
 [Shop Manager](./projects/shop_project.md)
 
-### Phase Four: Challenge Project
-
-Optionally, do this extra tricky challenge project designed for engineers who reach the end of the sequence and want to really test their skills.
-
-@TODO
 
 
 

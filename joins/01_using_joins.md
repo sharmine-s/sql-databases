@@ -8,8 +8,6 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to write `SELECT` SQL queries with a `JOIN` to query data from two tables.
 
-*Before moving ahead, make sure you're comfortable with [running `SELECT` queries from one table.](./03_querying_data.md)*
-
 ## Introduction
 
 So far you've been using `SELECT` to retrieve records from only one table. If we need to select both information about an album and about its artist, we need to do two queries — a first one to retrieve an album, and a second one to retrieve information about the artist, using the foreign key.
@@ -126,6 +124,8 @@ SELECT albums.id AS album_id, artists.id AS artist_id, albums.title, artists.nam
 
 ## Exercise One
 
+Use the database `music_library` for the following exercises.
+
 Select the `id` and `title` of all the albums from Taylor Swift.
 
 You should get the following result set:
@@ -136,6 +136,8 @@ You should get the following result set:
   6 | Lover
   7 | Folklore
 ```
+
+@TODO video
 
 ## Exercise Two
 
@@ -148,6 +150,8 @@ You should get the following result set:
 ----+-------------
   2 | Surfer Rosa
 ```
+
+@TODO video
 
 ## Challenge
 
@@ -162,14 +166,14 @@ You should get the following result set:
        11 | Fodder on My Wings
 ```
 
-[Next Challenge](07_using_table_plus.md)
+[Next Challenge](02_test_driving_repository_class_with_join.md)
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 
 ---
 
 **How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=sql_bites/06_using_joins.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=sql_bites/06_using_joins.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=sql_bites/06_using_joins.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=sql_bites/06_using_joins.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=sql_bites/06_using_joins.md&prefill_Sentiment=😀)  
+[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/01_using_joins.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/01_using_joins.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/01_using_joins.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/01_using_joins.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/databases&prefill_File=joins/01_using_joins.md&prefill_Sentiment=😀)  
 Click an emoji to tell us.
 
 <!-- END GENERATED SECTION DO NOT EDIT -->

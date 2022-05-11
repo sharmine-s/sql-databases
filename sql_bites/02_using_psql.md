@@ -10,18 +10,20 @@ Learn to use the `psql` REPL to create a database and import data.
 
 ## Introduction
 
-We interact with the database software (PostgreSQL) using a language called **SQL**. It's a very different language from programming languages such as Ruby, JavaScript or Python. It comes with different commands to query, create or modify data stored in the database.
+The database software (PostgreSQL) runs on our machine and manages the data we need to store.
 
-On a high-level, SQL allows to us to send queries to the database and ask things like:
+We interact with it using a language called **SQL**. It's a very different language from Ruby, JavaScript or Python. It comes with different commands to query, create or modify data stored in the database.
+
+On a high-level, SQL allows to us to send **queries** to the database and to things like:
   * Get all the records from a table.
   * Get all the records from a table where some conditions are met (e.g `where the name is "John"`).
   * Create a new record.
   * Update or delete a record where some conditions are met.
   * And more complex things, like create new tables.
 
-Programs that use a database to create, read, update or delete data are often called [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) applications.
+Programs that talk to a database to create, read, update or delete data are often called [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) applications.
 
-### Using `psql`
+## Using `psql`
 
 PostgreSQL comes with a built-in REPL, `psql`, that we can use to directly type-in some SQL to interact with the database.
 
@@ -40,11 +42,19 @@ leoht=#
 
 ## Creating a database
 
-A database **is not** the same thing as a table. A table is a structure that contains records (e.g a list of students, or a list of bank accounts). A database can have many tables and the data they contain.
+First, something to keep in mind — a database **is not** the same thing as a table.
+
+A table is a structure that contains a list of similar "things", or records (e.g a list of students, or a list of bank accounts).
+
+A database can have many tables and the data they contain. You can create different databases within the same PostgreSQL program, each with their own tables.
 
 Usually you will have one database (at least) for each project.
 
-We'll use the same database for these first SQL bites. We can create it by running the `CREATE DATABASE` SQL query.
+Below is a diagram showing a possible setup for a PostgreSQL program managing different databases, each one with its different tables.
+
+![](./resources/database-overview-diagram.png)
+
+You will use the same database for these next SQL bites. Create it by running the `CREATE DATABASE` SQL query.
 
 ```bash
 $ psql -h 127.0.0.1
@@ -67,22 +77,22 @@ You can now exit the REPL with `\q`.
 
 ## Importing the seed data
 
-In the following sections, you will work using seed data provided by us, with tables that have already been created. All the needed SQL is in the file [`music_database.sql`](../resources/seeds/music_database.sql) present in this directory.
+You've created a database, but it is empty for now, without any table.
+
+In the following sections, you will work using seed data provided by us, with tables that have already been created. All the needed SQL is in the file [`music_database.sql`](../resources/seeds/music_database.sql). You can clone this module's repository to get the file on your machine, or download it directly.
 
 You can have a look at this file if you'd like. It contains SQL queries to:
   * create the tables (the *structure*)
-  * insert some records (the *data* itself)
+  * insert some records in these tables (the *data* itself)
 
 Here's the general syntax to run SQL from a file using `psql`:
 ```bash
 $ psql -h 127.0.0.1 {database_name} < {file_containing_sql}
 ```
 
-And here's how we use it to load the music library:
+## Exercise
 
-```bash
-$ psql -h 127.0.0.1 music_library < music_database.sql
-```
+Use the command described above to load the file `music_database.sql` on the database `music_library`.
 
 You should get the following output:
 
@@ -99,13 +109,21 @@ INSERT 0 12
 INSERT 0 4
 ```
 
+<details>
+  <summary>Reveal the command to run</summary>
+
+  ```bash
+  $ psql -h 127.0.0.1 music_library < music_database.sql
+  ```
+</details>
+
 ## Demonstration
 
 @TODO Here's a video demonstration.
 
 ## Exercise
 
-In the `psql` REPL, connect to the database `music_library`:
+In the `psql` REPL, connect to the database `music_library`. You can run the usual command to connect to the REPL, followed by the database name: 
 
 ```bash
 $ psql -h 127.0.0.1 music_library
@@ -117,7 +135,7 @@ Then run the following SQL query:
 SELECT * FROM artists;
 ```
 
-It everything worked, you should get the following output, also called a **result set** — you will learn more about this in the next bite.
+It everything worked, you should get the following output, also called a **result set** — you will learn more about this in the next bite. Well done on running your first SQL query!
 
 ```
  id |     name     | genre 

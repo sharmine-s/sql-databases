@@ -7,7 +7,9 @@ Learn to design and create a schema with a single table.
 
 ## Introduction
 
-So far you've been working with tables already designed and created for you. In this section you'll learn how to design a table schema (which columns and types it contains) from plain English user stories. Often, this design step will happen before you write the program that needs to interact with the database. Later on, as more features and changes are added to the program, this schema will likely evolve.
+So far you've been working with tables already designed and created for you. In this section you'll learn how to design a table schema (which columns a table contains) from plain English user stories.
+
+Often, this design step will happen before you write the program that interacts with the database. Later on, as more features and changes are added to the program, this schema will likely evolve, and the table might be updated.
 
 Designing a schema is an important part of designing and planning programs that need to use a database. As always, there can be different approaches to this, with different tradeoffs depending on the situation.
 
@@ -69,9 +71,9 @@ I want to see a list of movies' release year.
 
 1. Copy the Design Recipe template and use it to design the schema for that table.
 2. Create the table by loading the SQL table file in `psql`.
-3. To verify your work, run a `SELECT` query on the database to retrieve all the movies records.
+3. To verify your work, make sure to run an `INSERT` query to insert a new movie record, and then a `SELECT` query to list the records.
 
-[Next Challenge](04_design_and_test_driving_repository_class.md)
+[Next Challenge](04_test_driving_find_method.md)
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 

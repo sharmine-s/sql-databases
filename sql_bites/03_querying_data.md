@@ -50,7 +50,7 @@ Run this query and you should get the following **result set**.
 
 ## Exercise One
 
-Use a `SELECT` statement to list only the `release_year`s from the `albums` table. You should get a similar result set:
+Use a `SELECT` statement to list only values for the column `release_year` from the `albums` table. You should get a similar result set:
 
 ```
  release_year 
@@ -68,7 +68,9 @@ Use a `SELECT` statement to list only the `release_year`s from the `albums` tabl
 
 ## Filtering
 
-So far you've been querying all records from the table, without specifying which ones. We can filter records by adding conditions to the query, with the `WHERE` keyword. Here's the general syntax:
+So far you've been querying _all_ records from the table, without picking the ones you needed.
+
+We can filter records by adding conditions to the query, with the `WHERE` keyword. Here's the general syntax:
 
 ```
 SELECT [columns to select] FROM [table name] WHERE [conditions];
@@ -79,10 +81,23 @@ And here are some examples. They also contain some SQL comments (a commented lin
 ```sql
 -- From albums,
 -- filter where id is '2',
--- and select only values for the columns id and title.
+-- and select only values for the columns id, title and release_year.
 SELECT id, title, release_year
   FROM albums
   WHERE id = 2;
+
+-- From albums,
+-- filter where title is 'Doolittle',
+-- and select only values for the columns id, title and release_year.
+
+-- Make sure to always use single quotes ('')
+-- to delimitate strings in conditions.
+SELECT id, title, release_year
+  FROM albums
+  WHERE title = 'Doolittle';
+
+-- We can use =, <, <=, >, >=
+-- to compare values.
 
 -- From albums,
 -- filter where release_year is greater than 1990,
@@ -91,21 +106,24 @@ SELECT id, title, release_year
   FROM albums
   WHERE release_year > 1990;
 
+-- We can use the keywords AND and OR
+-- to combine conditions.
+
 -- From albums,
 -- filter where release_year is greater than 1990 AND artist_is is '1',
--- and select only values for the columns id, title and release_year.
-SELECT id, title, release_year
+-- and select only values for the columns id, title, release_year and artist_id.
+SELECT id, title, release_year, artist_id
   FROM albums
   WHERE release_year > 1989 AND artist_id = 1;
 ```
 
-*You'll note that we can write a SQL query over more than one line, to improve readability, since we always end a query with `;`*
+*You'll note that we can write a SQL query over more than one line, to improve readability, since we always end a query with the semicolon `;`*
 
 ## Primary and foreign keys
 
-You've probably noticed the two columns having `id` in their name, and storing only numeric values. These columns are called "keys", and they come in two different types:
-  * The first column `id` is the **primary key**. Every table will (usually) have a primary key, and it is by convention always called `id`. Values for this column are used to uniquely identify each record, a bit like a social security number. You usually won't choose the value yourself, as databases can automatically assign a new value for this column, ensuring it's unique.
-  * The other column `artist_id` is called a **foreign key**. It is used to indicate which artist record (in the `artists` table) is associated with an album record. For example, in the last query from the example above, we've selected all albums having the value `1` for `artist_id`. This value `1` needs to be a valid **primary keys** in the `artists` table.
+You've probably noticed, by now, the two columns having `id` in their name (`id` and `artist_id`), and storing only numeric values. These columns are called "keys", and they come in two different types:
+  * The first column `id` is the **primary key**. Every table will (usually) have a primary key, and it is by convention always called `id`. Values for this column are used to uniquely identify each record, a bit like a social security number. You usually won't choose the value yourself, as databases can automatically assign a new value for this column when a new row is inserted, ensuring it's unique.
+  * The other column `artist_id` is called a **foreign key**. It is used to indicate which artist record (in the `artists` table) is associated with an album record. For example, in the last query from the example above, we've selected all albums having the value `1` for `artist_id`. This value `1` points to a **primary key** value in the `artists` table (this means all album records with the same `artist_id` belong to the same artist record).
 
 ```
   albums                                                    artists

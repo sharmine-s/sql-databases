@@ -1,64 +1,58 @@
 # Test-driving "write" operations
 
-_**This is a Makers Vine.** Vines are designed to gradually build up sophisticated skills. They contain a mixture of text and video, and may contain some challenge exercises without proposed solutions. [Read more about how to use Makers
+_**This is a Makers Vine.** Vines are designed to gradually build up sophisticated skills.
+They contain a mixture of text and video, and may contain some challenge exercises without
+proposed solutions. [Read more about how to use Makers
 Vines.](https://github.com/makersacademy/course/blob/main/labels/vines.md)_
 
 Learn to test-drive "Repository" class methods to INSERT and DELETE.
 
-## Intro
+## The `create` method
 
-@TODO write this
-
-The process to follow is actually a subset of the Design recipe to test-drive a Repository class — but for other operations, such as `create`, to insert new records:
+The process to follow is actually a subset of the Design recipe to test-drive a Repository
+class — but the operation we want to implement is to insert new records:
   1. Write the SQL query to be performed by the new method you need.
   2. Encode a RSpec test example for that new method.
   3. Implement the behaviour.
 
-Here's an example with a class `StudentRepository` you worked on earlier. We'll test-drive together the `.create` method to insert a new `Student` record.
+Here is a design for the `create` method of the example class `StudentRepository`:
 
-1. First, let's write the SQL needed to insert a new record:  
+| Method      |Job| Arguments | SQL query                                     | Returns  |
+| ----------- |----|-----------| ----------------------------------------------|----------|
+| `create`      |Insert a student| A `Student` object | `INSERT INTO ... ` | - |
 
-    ```sql
-    INSERT INTO students (name, cohort_name) VALUES ($1, $2)
-    ```
 
-2. @TODO
-    ```ruby
-    repository = StudentRepository.new
 
-    student = Student.new
-    student.name = 'Alice'
-    student.cohort_name = 'February 2022'
+We need to use SQL parameters for the `INSERT` query as well.
 
-    repository.create(student)
-    ```
+  ```sql
+  INSERT INTO students (name, cohort_name) VALUES ($1, $2)
+  ```
 
-    ```ruby
-    # file: spec/student_repository_spec.rb
+Here is the expected behaviour for the method:
 
-    ```
-3. Implement
-    ```ruby
-    # file: lib/student_repository.rb
+```ruby
+repository = StudentRepository.new
 
-    class StudentRepository
+student = Student.new
+student.name = 'Alice'
+student.cohort_name = 'February 2022'
 
-      # (Other methods here)
+repository.create(student)
 
-      def create(student)
-        sql = 'INSERT INTO students (name, cohort_name) VALUES($1, $2);'
-        params = [student.name, student.cohort_name]
+all_students = repository.all
 
-        DatabaseConnection.exec_params(sql, params)
+# all_students should contain the student 'Alice' created above.
+```
 
-        return student
-      end
-    end
-    ```
+## Demonstration
+
+@TODO video demo
 
 ## Exercise One
 
-Test-drive the method `.create` on the class `AlbumRepository` from the previous project `music_library`.
+Test-drive the method `.create` on the class `AlbumRepository` from the previous project
+`music_library`.
 
 ```ruby
 repository = AlbumRepository.new
@@ -70,15 +64,22 @@ album.artist_id = 1
 
 repository.create(album)
 
-repository.all # The returned array should contain the new Album instance
+all_albums = repository.all
+
+# The all_albums array should contain the new Album instance
 ```
 
 1. Encode the expected behaviour above as a new test for the `AlbumRepository` class.
 2. Implement the `.create` method to make this test pass.
 
+@TODO video
+
 ## Exercise Two
 
 Test-drive the method `.delete` on the class `AlbumRepository` from the previous exercise.
+It should delete a record given its ID.
+
+Make sure you describe the design of this new method before test-driving it.
 
 ```ruby
 repository = AlbumRepository.new
@@ -95,30 +96,51 @@ new_all_albums = repository.all # Should *not* contain the deleted album.
 1. Encode the expected behaviour above as a new test for the `AlbumRepository` class.
 2. Implement the `.delete` method to make this test pass.
 
+@TODO video
+
 ## Challenge
 
-This is a process feedback challenge. That means you should record yourself doing it and submit that recording to your coach for feedback. [How do I do this?](https://github.com/makersacademy/golden-square/blob/main/pills/process_feedback_challenges.md)
+This is a process feedback challenge. That means you should record yourself doing it and
+submit that recording to your coach for feedback. [How do I do
+this?](https://github.com/makersacademy/golden-square/blob/main/pills/process_feedback_challenges.md)
 
-1. In a new database `places_directory`, design the table for the following user stories.
-2. In a new project, test-drive the Model and Repository classes for this new table. You should test-drive and implement four methods `all`, `find`, `create` and `delete`.
+This is a big one! To work on this challenge, first:
+  * Setup a new project directory `social_network`.
+  * Create a new database `social_network`.
 
-```
-As a person who likes going out,
-So I can remember all the nice places I've been to,
-I'd like to keep a list of places with their names.
+Then:
 
-As a person who likes going out,
-So I can remember all the nice places I've been to,
-I'd like to record the address of each place and their postcode.
+1. Design the two tables for the following user stories.  
 
-As a person who likes going out,
-So I can remember all the nice places I've been to,
-I'd like to have a rating (of 1 to 5) for each place.
-```
+    ```
+    As a social network user,
+    So I can have my information registered,
+    I'd like to have a user account with my email address.
 
-[After you're done, submit your recording here](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=db_as02).
+    As a social network user,
+    So I can have my information registered,
+    I'd like to have a user account with my username.
 
-[Next Challenge](07_test_driving_repository_class_with_join.md)
+    As a social network user,
+    So I can write on my timeline,
+    I'd like to create posts associated with my user account.
+
+    As a social network user,
+    So I can write on my timeline,
+    I'd like each of my posts to have a title and a content.
+
+    As a social network user,
+    So I can know who reads my posts,
+    I'd like each of my posts to have a number of views.
+    ```
+
+2. Test-drive the Model and Repository classes for these two tables.
+    * You should end up with two Model classes and two Repository classes.
+    * You should test-drive and implement the four methods `all`, `find`, `create` and
+      `delete` for each Repository class.
+
+[After you're done, submit your recording
+here](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=db_as02).
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 
