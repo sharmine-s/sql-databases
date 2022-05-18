@@ -9,13 +9,11 @@ Learn to design and create a schema with a single table.
 
 So far you've been working with tables already designed and created for you. In this section you'll learn how to design a table schema (which columns a table contains) from plain English user stories.
 
-Often, this design step will happen before you write the program that interacts with the database. Later on, as more features and changes are added to the program, this schema will likely evolve, and the table might be updated.
+Often, this design step will happen before you even write the program that interacts with the database. Later on, as requirements and features evolve, this schema will likely evolve as well, and the schema might be updated, by adding columns to existing tables, or new tables.
 
-Designing a schema is an important part of designing and planning programs that need to use a database. As always, there can be different approaches to this, with different tradeoffs depending on the situation.
+Designing a schema is an important part of designing and planning programs that need to use a database. As always, there can be different approaches to this, with different tradeoffs depending on the situation. This module presents a few design recipes to follow for simple situations. Let's have a look at the first one.
 
-This module presents a few design recipes to follow for simple situations. Let's have a look at the first one.
-
-## Design Recipe
+## Design Recipe for a Single Table
 
 You can follow steps from this [Design Recipe](../resources/single_table_design_recipe_template.md) to design the schema for a single table. The outline is:
 
@@ -52,6 +50,10 @@ I want to see a list of students' cohorts.
 
 ## Challenge
 
+This is a process feedback challenge. That means you should record yourself doing it and
+submit that recording to your coach for feedback. [How do I do
+this?](https://github.com/makersacademy/golden-square/blob/main/pills/process_feedback_challenges.md)
+
 You should create a new database `movies_directory` for this exercise.
 
 Infer the table schema from these user stories.
@@ -72,6 +74,8 @@ I want to see a list of movies' release year.
 1. Copy the Design Recipe template and use it to design the schema for that table.
 2. Create the table by loading the SQL table file in `psql`.
 3. To verify your work, make sure to run an `INSERT` query to insert a new movie record, and then a `SELECT` query to list the records.
+
+[After you're done, submit your recording here](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=db_as02).
 
 [Next Challenge](04_test_driving_find_method.md)
 

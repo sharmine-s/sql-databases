@@ -8,9 +8,9 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to write `SELECT` SQL queries with a `JOIN` to query data from two tables.
 
-## Introduction
+## The N+1 Problem
 
-So far you've been using `SELECT` to retrieve records from only one table. If we need to select both information about an album and about its artist, we need to do two queries — a first one to retrieve an album, and a second one to retrieve information about the artist, using the foreign key.
+So far you've been using `SELECT` to retrieve records from only one table. If we need to select both information about an album and about its related artist, we need to do two queries — a first one to retrieve an album, and a second one to retrieve information about the artist, using the foreign key.
 
 ```sql
 -- First, retrieve the album
@@ -20,9 +20,11 @@ SELECT id, title, artist_id FROM albums WHERE title = 'Bossanova';
 SELECT id, name, genre FROM artists WHERE id = 1;
 ```
 
-As our database grows and becomes more complex, this is not ideal. Every request sent to the database adds some extra time to the program execution. 
+As our database grows and becomes more complex, this is not ideal. Every query sent to the database adds some extra time to the program execution. If we were to retrieve ten different albums, and then the associated artist for each of them, that would mean running twenty SQL queries in total. This is a common issue when working with databases, called the **n+1 problem**.
 
-We can retrieve all this information using the same SQL query, using what is called a **join**.
+Thankfully, we can retrieve all this information in a single SQL query, using what is called a **join**.
+
+A join query "combines" rows from different tables in the same result set, based on a relationship between those tables. Essentially we're running one SQL query, but getting results present in more than one table.
 
 Here is the general syntax:
 
@@ -33,11 +35,13 @@ SELECT [columns to select]
   ON [join condition]
 ```
 
-Let's breakdown this example:
+Let's breakdown an example:
 
 ```sql
 SELECT albums.id, albums.title, artists.id, artists.name
-  FROM albums JOIN artists ON artists.id = albums.artist_id;
+  FROM albums
+  JOIN artists
+  ON artists.id = albums.artist_id;
 ```
 
  * The first table we're querying on the left of the `JOIN` keyword is `albums`. We'll call this the "left" table.
@@ -126,7 +130,7 @@ SELECT albums.id AS album_id, artists.id AS artist_id, albums.title, artists.nam
 
 Use the database `music_library` for the following exercises.
 
-Select the `id` and `title` of all the albums from Taylor Swift.
+Use a `JOIN` query to select the `id` and `title` of all the albums from Taylor Swift.
 
 You should get the following result set:
 
@@ -141,7 +145,7 @@ You should get the following result set:
 
 ## Exercise Two
 
-Find the `id` and `title` of the (only) album from Pixies released in 1988.
+Use a `JOIN` query to find the `id` and `title` of the (only) album from Pixies released in 1988.
 
 You should get the following result set:
 

@@ -10,24 +10,24 @@ Learn to test-drive "Model" and "Repository" classes to SELECT records from the 
 ## Introduction
 
 In the realm of PostgreSQL, we manipulate tables, column names and records. However, in
-Ruby programs, we represent data using classes, instances and instance variables. We
+Ruby programs, we represent data using classes, objects and attributes. We
 therefore need a way to "transform" the data retrieved from the database into data that
 can be used by our program. 
 
 To achieve this, you will learn how to build two kind of classes — they're regular Ruby
 classes, but designed to achieve a specific purpose in our program:
-* A **Model** class is used to store a record's data.   
+* A **Model** class is used to hold a record's data.   
   For example, if we have a table `students`, we'd have a class `Student`, with attributes
-  for each column. It usually doesn't contain any logic, but is only used to store data.
+  for each column. A single object would hold the data for a specific student record. This class usually doesn't contain any logic, but is only used to hold data.
 
 * A **Repository** class implements methods to retrieve, create, update or delete data
   to/from the database.  
   For example, if we have one table `students`, we'd have a class `StudentRepository`
   containing methods that communicates with the database using SQL.
 
-```ruby
-# Example:
+Here's an example behaviour for such two classes, `StudentRepository` and `Student`:
 
+```ruby
 repository = StudentRepository.new 
 
 all_students = repository.all # Performs a SELECT query and returns an array of Student objects.
@@ -42,6 +42,12 @@ repository.create(new_student) # Creates a new student by performing a INSERT qu
 This technique (converting records from a database into objects we use in our program) is
 also called **object-relational mapping**.
 
+## Demonstration
+
+It's a bit easier to follow on the video.
+
+@TODO video demo
+
 ## Designing a Repository class
 
 When designing a Repository class, it is good to keep in mind (or better, on a notepad or
@@ -49,14 +55,13 @@ document) the list of methods to implement, alongside the SQL query to run.
 
 Here is an example for the class `StudentRepository` described above.
 
-| Method      |Job| Arguments | SQL query                                     | Returns  |
+| Method      |Job| Arguments | SQL query it executes                                    | Returns  |
 | ----------- |----|-----------| ----------------------------------------------|----------|
 | `all`       |Get all students| none      | `SELECT ... FROM students;` | Array of `Student` |
 | `find`      |Get one student by ID| An `id` (number) | `SELECT ... FROM students WHERE id = ...;` | A single `Student` |
-| `create`    |Insert one student| A `Student` instance  | `INSERT INTO students ...` | none |
+| `create`    |Insert one student| A `Student` object  | `INSERT INTO students ...` | none |
 
-You can see how we design the methods of the Repository class to use instances of the
-Model class as arguments or return values, and which SQL queries these methods send to the
+You can see how we design the methods of the Repository class to use Model objects as arguments or return values, and which SQL queries these methods send to the
 database to read, create or update data.
 
 ### Design Recipe
@@ -73,10 +78,6 @@ implement these two classes for a given table. The outline is:
   6. Write a SQL data seed and insert it.
   7. Encode a RSpec test example for one method.
   8. Implement the behaviour of that method.
-
-## Demonstration
-
-@TODO video demo
 
 ## Exercise One
 
@@ -109,6 +110,10 @@ Work in the same project directory `music_library` for this exercise.
 
 ## Challenge
 
+This is a process feedback challenge. That means you should record yourself doing it and
+submit that recording to your coach for feedback. [How do I do
+this?](https://github.com/makersacademy/golden-square/blob/main/pills/process_feedback_challenges.md)
+
 To work on this challenge, first:
   * Setup a new project directory `book_store` [following the
     guidance](../pills/setting_up_database_project.ed.md).
@@ -133,6 +138,7 @@ $ ruby app.rb
 5 - The Age of Innocence - Edith Wharton
 ```
 
+[After you're done, submit your recording here](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=db_as01).
 
 [Next Challenge](03_designing_schema_one_table.md)
 

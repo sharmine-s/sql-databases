@@ -40,7 +40,7 @@ end
 
 ## 3. Implement the Model class
 
-Define the attributes of your Model class. You can usually map the table columns to the attributes (instance variables) of the class, including primary and foreign keys.
+Define the attributes of your Model class. You can usually map the table columns to the attributes of the class, including primary and foreign keys.
 
 ```ruby
 # EXAMPLE
@@ -56,7 +56,7 @@ class Student
 end
 
 # The keyword attr_accessor is a special Ruby feature
-# which allows us to set and get instance variables on an instance,
+# which allows us to set and get attributes on an object,
 # here's an example:
 #
 # student = Student.new
@@ -89,7 +89,7 @@ class StudentRepository
 
   # Selecting all records
   def all
-    # Needs to return an array of `Student` instances.
+    # Needs to return an array of `Student` objects.
   end
 
   # Add more methods below for each operation you'd like to implement.
@@ -218,10 +218,10 @@ class StudentRepository
     
     # The result set is an array of hashes.
     # Loop through it to create a model
-    # instance for each record hash.
+    # object for each record hash.
     result_set.each do |record|
 
-      # Create a new model instance
+      # Create a new model object
       # with the record data.
       student = Student.new
 

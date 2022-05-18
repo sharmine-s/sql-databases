@@ -10,7 +10,7 @@ Learn to test-drive "Model" and "Repository" classes to SELECT related records f
 
 ## Intro
 
-You've previously learned how to test-drive a method `find` that retrieves a single record, and return an instance of the model.
+You've previously learned how to test-drive a method `find` that retrieves a single record, and return a model object.
 
 To select an artist and all the corresponding albums, which could use code like this:
 
@@ -25,11 +25,9 @@ albums = album_repository.all
 # And then filter the albums array depending on the artist_id value
 ```
 
-However this is not great for two reasons:
-  * we're fetching _all_ albums only to later filter the ones associated with the artist we have
-  * we're making _two_ queries to the database rather than a single one
+However this is not great because of the N+1 problem mentioned in the previous section. 
 
-You've also learned about using `JOIN` to select data from two tables at the same time. In this section, you'll learn how to build a method `find_with_****`, that returns a single record, alongside its related rows in the other table.
+You've learned how to use `JOIN` to select data from two tables in a single query, to solve this problem. In this section, you'll learn how to build a method `find_with_****`, that returns a single record, alongside its related rows in the other table.
 
 For example, we could fetch a single artist, and get its related albums this way:
 
@@ -38,17 +36,18 @@ For example, we could fetch a single artist, and get its related albums this way
 
 repository = ArtistRepository.new
 
-# Perfoms a SELECT with a JOIN and returns an Artist instance.
-# This instance also has an attribute .albums, which is an array
-# of Album instances.
+# Perfoms a SELECT with a JOIN and returns an Artist object.
+# This object also has an attribute .albums, which is an array
+# of Album objects.
 artist = repository.find_with_albums(1)
 
 artist.id # 1
 
-artist.albums # is an array of Album instances
+artist.albums # is an array of Album objects
+artist.albums.id # 12
 ```
 
-We'll need to add the instance variable `albums` to the `Artist` class. By default, this would be an empty array.
+We'll need to add the attribute `albums` to the `Artist` class. By default, this would be an empty array.
 
 ```ruby
 # file: lib/artist.rb
@@ -143,11 +142,9 @@ If you didn't design and create the tables yourself, download the SQL exemplar a
 
 ## Challenge
 
-Use the database `blog` from the previous section.
+Use the database `blog` you created [in this earlier challenge.](../challenges/05_designing_schema_two_tables.md#challenge)
 
-If you didn't design and create the tables yourself, download the SQL exemplar and load it into the database.
-
-1. Test-drive and implement the three classes for the `posts` and `comments` table.
+1. Test-drive and implement the three classes for the `posts` and `comments` tables.
 
 2. Write a small program in `app.rb` using the class `PostRepository` to print out the data of one post with its comments to the terminal.
 

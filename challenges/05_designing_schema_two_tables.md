@@ -7,13 +7,13 @@ Learn to design and create a schema with two tables and a foreign key.
 
 ## Introduction
 
-You've learned how to design a schema with a single table. You will often need to store different kind of records in our programs — for example, _albums and artists_, for a music library, or _posts and comments_, for a blogging program.
+You've learned how to design a schema with a single table. Often, we will need to store different kind of records in our programs — for example, _albums and artists_, for a music library, or _posts and comments_, for a blogging program.
 
 Relational databases allow us to store different kind of records and "link" them together, with the use of foreign keys. In the music library database, albums are associated to their artist record using the `artist_id` foreign key.
 
 In this section you'll learn how to design a schema using two related tables from a plain English specification.
 
-### Relationship types
+## Relationship types
 
 In relational databases, there are different types of relationship possible between two tables. First, you'll learn about **one-to-many**, which is probably the most common type. One record in a table can be associated with many records in another table, hence the name.   
 
@@ -30,7 +30,7 @@ You can follow steps from this [Design Recipe](../resources/two_table_design_rec
 1. List all the nouns
 2. Decide whether a noun is an entity (a table name) or a property of it (a column).
 3. Decide the column types.
-4. Decide how the two tables will be related (which foreign key is needed).
+4. Decide how the two tables will be related (where the foreign key is needed).
 5. Write the SQL to create the tables.
 
 *As always with user stories, it's good to always really think about what data we need to store, rather than relying too much on the "extract nouns" technique, when it leads to awkward results.*
@@ -70,8 +70,6 @@ I want to see a list of students' cohorts.
 
 ## Challenge
 
-This is a process feedback challenge. That means you should record yourself doing it and submit that recording to your coach for feedback. [How do I do this?](https://github.com/makersacademy/golden-square/blob/main/pills/process_feedback_challenges.md)
-
 You should create a new database `blog` for this challenge.
 
 Infer the table schema from these user stories.
@@ -101,7 +99,6 @@ So I can let people comment on interesting stuff
 I want the author to include their name in comments.
 ```
 
-[After you're done, submit your recording here](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=db_as01).
 
 [Next Challenge](06_test_driving_write_operations.md)
 

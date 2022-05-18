@@ -10,26 +10,27 @@ database.
 
 ## Intro
 
-You previously learned how to test-drive a Repository class method to retrieve all records
-from a table (usually we name this method `all`). 
+You previously learned how to test-drive a Repository class method to retrieve _all_ records
+from a table (we named this method `all`). 
 
-In this section, you will learn how to test-drive a method `find` that returns a single
-record using its id. It will perform a filtered `SELECT` query to retrieve a single
-result.
+In this section, you will learn how to test-drive a method `find` that returns _a single
+record using its id_. It will perform a filtered `SELECT` query to retrieve that single
+row.
 
-Here is the expected behaviour for this new method:
+Here is the expected behaviour for this method:
 
 ```ruby
 repository = StudentRepository.new 
 
 student = repository.find(1) # Performs a SELECT query and returns a single Student object.
 
-puts student.id # 1
+student.id # 1
+student.name # "David"
 ```
 
 And its design:
 
-| Method      |Job| Arguments | SQL query                                     | Returns  |
+| Method      |Job| Arguments | SQL query it performs                                    | Returns  |
 | ----------- |----|-----------| ----------------------------------------------|----------|
 | `find`      |Get one student by ID| An `id` (number) | `SELECT ... ` | A single `Student` |
 
@@ -70,12 +71,15 @@ class StudentRepository
 
     result = DatabaseConnection.exec_params(sql, params)
 
-    # (convert the result to a Student instance and return it)
+    # (The code now needs to convert the result to a
+    # Student object and return it)
   end
 end
 ```
 
 ## Demonstration
+
+It's a bit easier to follow on the video.
 
 @TODO video demo
 
@@ -83,12 +87,12 @@ end
 
 _Work in the project directory `music_library` you've worked on before._
 
-You can use the Design recipe document you used to test-drive the `AlbumRepository#all`
-method previously — this time, adapting the steps 5 to 8 for that new method. 
+Use the Design recipe document used to test-drive the `AlbumRepository#all`
+method previously — following the steps 5 to 8 for the new `AlbumRepository#find` method. 
 
 1. Test-drive and implement the method `find` on the `AlbumRepository` class. 
 2. Modify the program in `app.rb` so it prints out to the terminal the data of the record
-   with id `3`.
+   with id `3`, using the new method.
 
 ## Challenge
 

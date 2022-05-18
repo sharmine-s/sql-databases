@@ -1,4 +1,4 @@
-# Test-driving "write" operations
+# Test-driving write operations
 
 _**This is a Makers Vine.** Vines are designed to gradually build up sophisticated skills.
 They contain a mixture of text and video, and may contain some challenge exercises without
@@ -9,21 +9,17 @@ Learn to test-drive "Repository" class methods to INSERT and DELETE.
 
 ## The `create` method
 
-The process to follow is actually a subset of the Design recipe to test-drive a Repository
-class — but the operation we want to implement is to insert new records:
-  1. Write the SQL query to be performed by the new method you need.
-  2. Encode a RSpec test example for that new method.
-  3. Implement the behaviour.
+The process to follow is the same you used for the previous methods — but the operation we want to implement is to insert new records.
 
 Here is a design for the `create` method of the example class `StudentRepository`:
 
 | Method      |Job| Arguments | SQL query                                     | Returns  |
 | ----------- |----|-----------| ----------------------------------------------|----------|
-| `create`      |Insert a student| A `Student` object | `INSERT INTO ... ` | - |
+| `create`      |Insert a student| A `Student` object | `INSERT INTO students (name, cohort_name) VALUES ($1, $2) ` | - |
 
 
 
-We need to use SQL parameters for the `INSERT` query as well.
+As the `INSERT` query contains some dynamic parts (the new values to insert), we need to use SQL parameters as well.
 
   ```sql
   INSERT INTO students (name, cohort_name) VALUES ($1, $2)
@@ -34,13 +30,15 @@ Here is the expected behaviour for the method:
 ```ruby
 repository = StudentRepository.new
 
+# Build a new model object
 student = Student.new
 student.name = 'Alice'
 student.cohort_name = 'February 2022'
 
-repository.create(student)
+repository.create(student) # Performs the INSERT query
 
-all_students = repository.all
+# Performs a SELECT query to get all records (implemented previously)
+all_students = repository.all 
 
 # all_students should contain the student 'Alice' created above.
 ```
@@ -66,7 +64,7 @@ repository.create(album)
 
 all_albums = repository.all
 
-# The all_albums array should contain the new Album instance
+# The all_albums array should contain the new Album object
 ```
 
 1. Encode the expected behaviour above as a new test for the `AlbumRepository` class.
@@ -139,8 +137,10 @@ Then:
     * You should test-drive and implement the four methods `all`, `find`, `create` and
       `delete` for each Repository class.
 
+3. If you'd like an extra challenge, test-drive as well an `update` method for both classes, which updates a specific record.
+
 [After you're done, submit your recording
-here](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=db_as02).
+here](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=db_as03).
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 

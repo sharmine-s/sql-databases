@@ -106,7 +106,7 @@ You should get the following result set:
 
 ## Challenge
 
-Insert a new tag `'sql'` and associate the post titled `'SQL basics'` with this tag.
+Use SQL to insert a new tag `'sql'` and associate the post titled `'SQL basics'` with this tag.
 
 Then use a `SELECT` query with a `JOIN` to retrieve all posts associated with the tag
 `'sql'` and verify the above worked.

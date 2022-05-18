@@ -1,4 +1,4 @@
-# Many-to-many relationships
+# Designing Many-to-many relationships
 
 _**This is a Makers Bite.** Bites are designed to train specific skills or
 tools. They contain an intro, a demonstration video, some exercises with an
@@ -26,7 +26,7 @@ When designing a many-to-many relationship, you will need a third table, acting 
 
 ## Design Recipe
 
-@TODO
+You can follow steps from this [Design Recipe](../resources/two_tables_many_to_many_design_recipe_template.md) to design the schema for two related tables with a Many-to-Many relationship.
 
 ## Demonstration
 
@@ -34,7 +34,53 @@ When designing a many-to-many relationship, you will need a third table, acting 
 
 ## Exercise
 
+Infer the table schema from these user stories.
+
+```
+As a coach
+So I can get to know all students
+I want to keep a list of students' names.
+
+As a coach
+So I can get to know all students
+I want to assign tags to students (for example, "happy", "excited", etc).
+
+As a coach
+So I can get to know all students
+I want to be able to assign the same tag to many different students.
+
+As a coach
+So I can get to know all students
+I want to be able to assign many different tags to a student.
+```
+
+1. Copy the Design Recipe template and use it to design the schema for the two tables and their join table.
+2. Create the tables by loading the SQL file in `psql`.
+
 ## Challenge
+
+Infer the table schema from these user stories.
+
+```
+As a cinema company manager,
+So I can keep track of movies being shown,
+I want to keep a list of movies with their title and release date.
+
+As a cinema company manager,
+So I can keep track of movies being shown,
+I want to keep a list of my cinemas with their city name (e.g 'London' or 'Manchester').
+
+As a cinema company manager,
+So I can keep track of movies being shown,
+I want to be able to list which cinemas are showing a specific movie.
+
+As a cinema company manager,
+So I can keep track of movies being shown,
+I want to be able to list which movies are being shown a specific cinema.
+```
+
+1. Copy the Design Recipe template and use it to design the schema for the two tables and their join table.
+2. Create the tables by loading the SQL file in `psql`.
 
 
 [Next Challenge](05_repository_classes_many_to_many.md)

@@ -4,7 +4,7 @@ Learn to setup PostgreSQL.
 
 ## Introduction
 
-Up until now, you've been storing your program's data in memory — as instance variables, arrays, hashes, etc. If we exit the program, all the data is lost, which is not great if we need to store data for the long term (think bank accounts, user accounts, order history...).
+Up until now, you've been storing your program's data in memory — as attributes, arrays, objects, etc. If we exit the program, all the data is lost, which is not great if we need to store data for the long term (think bank accounts, user accounts, order history...).
 
 This week, you'll learn how to use a database to store data used by programs.
 

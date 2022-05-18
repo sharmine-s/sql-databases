@@ -75,8 +75,8 @@ Most of the time, you'll be using a **one-to-many** relationship, and will need 
 
 To decide on which one, answer these two questions:
 
-1. Can one [ENTITY ONE] have many [ENTITY TWO]? (Yes/No)
-2. Can one [ENTITY TWO] have many [ENTITY ONE]? (Yes/No)
+1. Can one [TABLE ONE] have many [TABLE TWO]? (Yes/No)
+2. Can one [TABLE TWO] have many [TABLE ONE]? (Yes/No)
 
 You'll then be able to say that:
 
@@ -127,7 +127,7 @@ CREATE TABLE albums (
 
 ```
 
-## 5. Create the table.
+## 5. Create the tables.
 
 ```bash
 psql -h 127.0.0.1 database_name < albums_table.sql

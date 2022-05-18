@@ -26,16 +26,18 @@ Go through these exercises and learn how to setup PostgreSQL and use SQL to read
 
 ### Phase Two: Challenges
 
+<!-- OMITTED -->
+
 Go through these exercises and learn how to setup and gradually build a program which communicates with a database.
 
 Some of these challenges include [Process Feedback Challenges](https://github.com/makersacademy/golden-square/blob/main/pills/process_feedback_challenges.md), in which you record yourself performing the task and share it with your coach for feedback. These are tagged with a 📡.
 
 1. [Setting up a project](./challenges/01_setting_up_project.md).
-2. [Designing Model and Repository classes](./challenges/02_test_driving_model_repository_classes.md).
-3. [Designing a schema with one table](./challenges/03_designing_schema_one_table.md).
+2. [Designing a Repository class](./challenges/02_test_driving_model_repository_classes.md). 📡.
+3. [Designing a schema with one table](./challenges/03_designing_schema_one_table.md). 📡.
 4. [Designing a Repository class "find" method](./challenges/04_test_driving_find_method.md).
-5. [Designing a schema with two related tables](./challenges/05_designing_schema_two_tables.md). 📡.
-6. [Designing  a Repository class "write" methods (create and delete)](./challenges/06_test_driving_write_operations.md). 📡.
+5. [Designing a schema with two related tables](./challenges/05_designing_schema_two_tables.md). 
+6. [Designing  a Repository class "create" and "delete methods](./challenges/06_test_driving_write_operations.md). 📡.
 
 <!-- OMITTED -->
 

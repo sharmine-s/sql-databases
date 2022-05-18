@@ -15,7 +15,7 @@ post_repository = PostRepository.new
 
 posts = post_repository.find_by_tag('coding')
 
-# The array `posts` should contain the following Post instances:
+# The array `posts` should contain the following Post objects:
 #
 #  * 1	How to use Git
 #  * 2	Ruby classes
@@ -41,7 +41,7 @@ Test-drive and implement Model and Repository classes for the table `posts`, wit
 
 ## Challenge
 
-Test-drive and implement Model and Repository classes for the table `tags`, with the method `TagRepository#find_by_post`. This method should accept a post ID, and return an array of related  `Tag` instances.
+Test-drive and implement Model and Repository classes for the table `tags`, with the method `TagRepository#find_by_post`. This method should accept a post ID, and return an array of related  `Tag` objects.
 
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
