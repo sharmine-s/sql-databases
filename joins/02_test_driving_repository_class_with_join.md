@@ -12,7 +12,7 @@ Learn to test-drive "Model" and "Repository" classes to SELECT related records f
 
 You've previously learned how to test-drive a method `find` that retrieves a single record, and return a model object.
 
-To select an artist and all the corresponding albums, which could use code like this:
+To select an artist and all the corresponding albums, we could write the following code:
 
 ```ruby
 artist_repository = ArtistRepository.new

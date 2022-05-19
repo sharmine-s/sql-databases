@@ -131,7 +131,7 @@ Run this file with `ruby app.rb`, and you should get the following output:
 
 If you get a SQL error, use the error message to find out what went wrong — make sure the database name is correct, and that there are no syntax errors in the SQL query.
 
-If you spent some time debugging this setup, and you're not sure of what is the problem, ask your coach.
+If you spent some time debugging this setup, and you're not sure of what the problem is, ask your coach.
 
 [Next Challenge](02_test_driving_model_repository_classes.md)
 

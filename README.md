@@ -11,6 +11,12 @@ You will achieve these by working through a sequence of exercises and challenges
 
 Work through each of these exercises in sequence.
 
+This module is designed to be worked on during a week. Here's a suggested pace — you might find you need more (or less) time than this to complete the challenges, and that's OK.
+ * Days 1 and 2: SQL bites.
+ * Days 3 and 4: Challenges.
+ * Day 5: Joins and Many-to-Many.
+ * Solo challenge at the end of the week.
+
 ### Phase One: SQL Bites
 
 Go through these exercises and learn how to setup PostgreSQL and use SQL to read and manipulate data stored in an existing database.

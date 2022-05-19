@@ -11,14 +11,14 @@ So far you've been working with tables already designed and created for you. In 
 
 Often, this design step will happen before you even write the program that interacts with the database. Later on, as requirements and features evolve, this schema will likely evolve as well, and the schema might be updated, by adding columns to existing tables, or new tables.
 
-Designing a schema is an important part of designing and planning programs that need to use a database. As always, there can be different approaches to this, with different tradeoffs depending on the situation. This module presents a few design recipes to follow for simple situations. Let's have a look at the first one.
+Designing a schema is an important part of designing and planning programs that need to use a database. As always, there can be different approaches to this. This module presents a few design recipes to follow for simple situations. Let's have a look at the first one.
 
-## Design Recipe for a Single Table
+## Designing a Single Table Schema
 
-You can follow steps from this [Design Recipe](../resources/single_table_design_recipe_template.md) to design the schema for a single table. The outline is:
+Follow this [Design Recipe](../resources/single_table_design_recipe_template.md) to design the schema for a single table. The outline is:
 
 1. List all the nouns from the specification or user stories.
-2. Decide whether a noun is an entity (the table name) or a property of it (a column).
+2. Decide whether a noun is a record (the table name) or a property of it (a column).
 3. Decide the column types.
 4. Write the SQL to create the table.
 
@@ -58,15 +58,15 @@ You should create a new database `movies_directory` for this exercise.
 
 Infer the table schema from these user stories.
 ```
-As a cinephile
+As a person who loves movies,
 So I can list all my favourite movies
 I want to see a list of movies' titles.
 
-As a cinephile
+As a person who loves movies,
 So I can list all my favourite movies
 I want to see a list of movies' genres.
 
-As a cinephile
+As a person who loves movies,
 So I can list all my favourite movies
 I want to see a list of movies' release year.
 ```

@@ -1,4 +1,4 @@
-# Test-driving Model and Repository classes
+# Test-driving a Repository class
 
 _**This is a Makers Vine.** Vines are designed to gradually build up sophisticated skills.
 They contain a mixture of text and video, and may contain some challenge exercises without
@@ -12,7 +12,7 @@ Learn to test-drive "Model" and "Repository" classes to SELECT records from the 
 In the realm of PostgreSQL, we manipulate tables, column names and records. However, in
 Ruby programs, we represent data using classes, objects and attributes. We
 therefore need a way to "transform" the data retrieved from the database into data that
-can be used by our program. 
+can be used in our program. 
 
 To achieve this, you will learn how to build two kind of classes — they're regular Ruby
 classes, but designed to achieve a specific purpose in our program:

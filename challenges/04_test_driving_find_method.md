@@ -117,7 +117,7 @@ Then:
     So I can stay organised and decide what to cook,
     I'd like to give a rating to each of the recipes (from 1 to 5).
     ```
-2. Test-drive the Model and Repository classes for this new table. You should design,
+2. Test-drive the Repository class for this new table. You should design,
    test-drive and implement two methods `all` and `find`.
 3. Write code in the main file `app.rb` so it prints out the list of recipes.
 

@@ -25,10 +25,10 @@ This relationship is designed by creating the **foreign key** column on one of t
 
 ## Design Recipe
 
-You can follow steps from this [Design Recipe](../resources/two_table_design_recipe_template.md) to design the schema for two related tables. The outline is:
+Follow this [Design Recipe](../resources/two_table_design_recipe_template.md) to design the schema for two related tables. The outline is:
 
 1. List all the nouns
-2. Decide whether a noun is an entity (a table name) or a property of it (a column).
+2. Decide whether a noun is a record (a table name) or a property of it (a column).
 3. Decide the column types.
 4. Decide how the two tables will be related (where the foreign key is needed).
 5. Write the SQL to create the tables.

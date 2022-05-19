@@ -35,7 +35,7 @@ album, title, release year, artist, name
 
 Put the different nouns in this table. Replace the example with your own nouns.
 
-| Entity                | Property            |
+| Record                | Properties          |
 | --------------------- | ------------------  |
 | album                 | title, release year
 | artist                | name

@@ -10,7 +10,7 @@ Learn to write `SELECT` SQL queries with a `JOIN` to query data from two tables.
 
 ## The N+1 Problem
 
-So far you've been using `SELECT` to retrieve records from only one table. If we need to select both information about an album and about its related artist, we need to do two queries — a first one to retrieve an album, and a second one to retrieve information about the artist, using the foreign key.
+So far you've been using `SELECT` to retrieve records from only one table. If we want to select information both about an album _and_ its related artist, we need two queries — a first one to retrieve an album, and a second one to retrieve information about the artist, using the foreign key.
 
 ```sql
 -- First, retrieve the album
@@ -20,11 +20,11 @@ SELECT id, title, artist_id FROM albums WHERE title = 'Bossanova';
 SELECT id, name, genre FROM artists WHERE id = 1;
 ```
 
-As our database grows and becomes more complex, this is not ideal. Every query sent to the database adds some extra time to the program execution. If we were to retrieve ten different albums, and then the associated artist for each of them, that would mean running twenty SQL queries in total. This is a common issue when working with databases, called the **n+1 problem**.
+As our database grows and contains more data, this is not ideal. Every query sent to the database adds some extra time to the query execution. If we were to retrieve ten different albums, and then the associated artist for each of them, that would mean running twenty SQL queries in total. This is a common issue when working with databases, called the **n+1 problem**.
 
 Thankfully, we can retrieve all this information in a single SQL query, using what is called a **join**.
 
-A join query "combines" rows from different tables in the same result set, based on a relationship between those tables. Essentially we're running one SQL query, but getting results present in more than one table.
+A join query "combines" rows from different tables in the same result set, based on a relationship between those tables. Essentially we're running a single SQL query, but getting results from more than one table.
 
 Here is the general syntax:
 
@@ -40,8 +40,8 @@ Let's breakdown an example:
 ```sql
 SELECT albums.id, albums.title, artists.id, artists.name
   FROM albums
-  JOIN artists
-  ON artists.id = albums.artist_id;
+    JOIN artists
+    ON artists.id = albums.artist_id;
 ```
 
  * The first table we're querying on the left of the `JOIN` keyword is `albums`. We'll call this the "left" table.
@@ -57,8 +57,13 @@ SELECT albums.id, albums.title, artists.id, artists.name
 Let's run the following query:
 
 ```sql
-SELECT albums.id, albums.title, artists.id, artists.name
-  FROM albums JOIN artists ON artists.id = albums.artist_id;
+SELECT albums.id,
+      albums.title,
+      artists.id,
+      artists.name
+  FROM albums
+    JOIN artists
+    ON artists.id = albums.artist_id;
 ```
 
 ```
@@ -79,8 +84,13 @@ Even though we prefixed the column names, we still end up with two columns `id` 
 
 ```sql
 -- We added an alias for artists.id using the "AS" keyword.
-SELECT albums.id, albums.title, artists.id AS artist_id, artists.name
-  FROM albums JOIN artists ON artists.id = albums.artist_id;
+SELECT albums.id,
+       albums.title,
+       artists.id AS artist_id,
+       artists.name
+  FROM albums
+    JOIN artists
+    ON artists.id = albums.artist_id;
 ```
 
 ```
@@ -105,8 +115,13 @@ You'll note that we have duplicate values for the artist name (the last column o
 -- Find the album ID, artist ID, album title and artist name
 -- of all the albums.
 
-SELECT albums.id AS album_id, artists.id AS artist_id, albums.title, artists.name
-  FROM artists JOIN albums ON albums.artist_id = artists.id;
+SELECT albums.id AS album_id,
+       artists.id AS artist_id,
+       albums.title,
+       artists.name
+  FROM artists
+    JOIN albums
+    ON albums.artist_id = artists.id;
 ```
 
 We can also filter the result set by using `WHERE` — specifying the filter column.
@@ -117,8 +132,13 @@ We can also filter the result set by using `WHERE` — specifying the filter col
 -- where the associated artist is ABBA.
 --
 -- (in other words, only albums by ABBA).
-SELECT albums.id AS album_id, artists.id AS artist_id, albums.title, artists.name
-  FROM artists JOIN albums ON albums.artist_id = artists.id
+SELECT albums.id AS album_id,
+       artists.id AS artist_id,
+       albums.title,
+       artists.name
+  FROM artists
+    JOIN albums
+    ON albums.artist_id = artists.id
   WHERE artists.name = 'ABBA';
 ```
 

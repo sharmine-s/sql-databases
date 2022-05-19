@@ -8,7 +8,7 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to select using a `JOIN` with many-to-many relationship between two tables.
 
-## Intro
+## Introduction
 
 Let's consider the two following tables:
 
@@ -24,23 +24,23 @@ create table tags (
 );
 ```
 
-A single post can be associated with many different tags (e.g `coding`, `travel`), but a
-single post could also be associated with different posts (many posts could be tagged with
+A single post can be associated with many different tags (e.g one post tagged with `coding`, `ruby`), but a
+single tag could also be associated with different posts (many posts could be tagged with
 `coding`).
 
 A **many-to-many relationship** is needed when a record from the first table can have
-_many_ records in the other table, but the opposite is also true.
+_many_ records in the other table, and the other way is also true.
 
-This is done using a third table used to associate records between the two tables. This
+Such a relationship is made with a third table used to associate records between the two tables. This
 third table is called a **join table**
 
 ## Importing the seed data
 
-First, import the seed data in the file
+Import the seed data in the file
 [`blog_posts_tags.sql`](../resources/seeds/blog_posts_tags.sql) into a new database. This
-will create three tables (`posts`, `tags`, and their join table `posts_tags`) and also insert data.
+will create three tables (`posts`, `tags`, and their join table `posts_tags`) and insert some records.
 
-Then use TablePlus or `psql` to work through the following examples and exercises.
+Once this is done, use TablePlus or `psql` to work through the following examples and exercises.
 
 ## Using a `JOIN` to select
 
@@ -52,9 +52,9 @@ Then use TablePlus or `psql` to work through the following examples and exercise
 --    * second, by matching only tags for these records in the join table
 SELECT tags.id, tags.name
   FROM tags 
-  JOIN posts_tags ON posts_tags.tag_id = tags.id
-  JOIN posts ON posts_tags.post_id = posts.id
-  WHERE posts.id = 2;
+    JOIN posts_tags ON posts_tags.tag_id = tags.id
+    JOIN posts ON posts_tags.post_id = posts.id
+    WHERE posts.id = 2;
 ```
 
 When writing a complex `JOIN` like above, it's often a good idea to diagram the "path" of the different joins, from the initial condition (here, the post ID) to the final result we need (the tags).

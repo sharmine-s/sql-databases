@@ -14,8 +14,8 @@ A many-to-many relationship is needed when a record from the first table can hav
 
 You can recognise the need for a many-to-many relationship when you can answer "yes" to the following questions:
 
-1. Can one [ENTITY ONE] have many [ENTITY TWO]?
-2. Can one [ENTITY TWO] have many [ENTITY ONE]?
+1. Can one [TABLE ONE] have many [TABLE TWO]?
+2. Can one [TABLE TWO] have many [TABLE ONE]?
 
 As an example: a blog post can have many tags. But a tag can also be associated with many posts.
 

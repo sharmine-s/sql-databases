@@ -34,7 +34,7 @@ posts, title, tags, name
 
 Put the different nouns in this table. Replace the example with your own nouns.
 
-| Entity                | Property            |
+| Record                | Properties          |
 | --------------------- | ------------------  |
 | posts                 | title, content
 | tags                  | name
