@@ -154,21 +154,6 @@ You should get the following result set:
 (1 row)
 ```
 
-## Exercise Three
-
-Use a filtered `SELECT` statement to list only the `title` of the albums from Nina Simone (you'll need to find the right primary key value for this artist).
-
-You should get the following result set:
-
-```
- title         
-----------------------
- I Put a Spell on You
- Baltimore
- Here Comes the Sun
- Fodder on My Wings
-```
-
 ## Challenge
 
 Find all titles of the albums released between 1980 and 1990 (inclusive).

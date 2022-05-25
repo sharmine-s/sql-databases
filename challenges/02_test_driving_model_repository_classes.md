@@ -25,7 +25,18 @@ classes, but designed to achieve a specific purpose in our program:
   For example, if we have one table `students`, we'd have a class `StudentRepository`
   containing methods that communicates with the database using SQL.
 
-Here's an example behaviour for such two classes, `StudentRepository` and `Student`:
+Here's how these classes would be mapped to a project structure:
+
+```
+project/
+   lib/
+      student.rb
+      student_repository.rb
+   spec/
+      student_repository_spec.rb
+```
+
+And here's an example behaviour for such two classes, `StudentRepository` and `Student`:
 
 ```ruby
 repository = StudentRepository.new 
@@ -66,18 +77,16 @@ database to read, create or update data.
 
 ### Design Recipe
 
-You can follow steps from this [Design
+Follow this [Design
 Recipe](../resources/repository_class_recipe_template.md) to design, test-drive and
-implement these two classes for a given table. The outline is:
-  1. Design the table and create it in your database.
-  2. Infer the class names from the table name.
-  3. Implement the Model class.
-  4. Decide on the operations (methods) to implement for the Repository class — here we'll
-     start with the simplest - querying all records.
-  5. Write the SQL queries for each operation.
-  6. Write a SQL data seed and insert it.
-  7. Encode a RSpec test example for one method.
-  8. Implement the behaviour of that method.
+implement these two classes for a table. The outline is:
+  1. Design and create the table if needed.
+  2. Create test SQL seeds.
+  3. Define the Model and Repository class names.
+  4. Implement the Model class.
+  5. Design the Repository class interface.
+  6. Write test examples.
+  7. Test-driven and implement the Repository class behaviour.
 
 ## Exercise One
 
@@ -120,7 +129,7 @@ To work on this challenge, first:
   * Create a new database `book_store`.
   * [Import this SQL seed into that new database.](../resources/seeds/book_store.sql)
 
-Then: 
+Then, start recording yourself, and: 
 1. Copy the [Design Recipe Template](../resources/repository_class_recipe_template.md) and
    adapt it to test-drive and implement the two classes for the `books` table. Since the table is already created, so you can skip step 1.
 2. Write a small program in `app.rb` using the class `BookRepository` to print out the
