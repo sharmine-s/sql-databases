@@ -8,6 +8,8 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to write `SELECT` SQL queries to select and filter records from a table.
 
+<!-- OMITTED -->
+
 ## Introduction
 
 The `SELECT` SQL query is used to retrieve records from a table.
@@ -18,9 +20,11 @@ Here's the general syntax of a `SELECT` query:
 SELECT [columns to select] FROM [table name];
 ```
 
-The result of running a `SELECT` query on the database is called a **result set**, and is also in the shape of a table. The columns will be the ones you asked for, and the rows all the matching records.
+The result of running a `SELECT` query on the database is called a **result set**, and is also in the shape of a table.
 
-### Selecting columns of the result set
+The columns of that result set will be the ones you asked for in the query, and the rows are all the matching records.
+
+## Selecting columns in the result set
 
 Here's a simple `SELECT` query that we can run on the music library database. It selects records from the table `albums`, keeping in the result set only values for the columns `id` and `title`. 
 
@@ -28,9 +32,7 @@ Here's a simple `SELECT` query that we can run on the music library database. It
 SELECT id, title FROM albums;
 ```
 
-In English, you could read this as "From the table `albums`, select values for `id` and `title`".
-
-Run this query and you should get the following **result set**.
+Run this query and you should get the following **result set**. We didn't specify any condition yet, so we get _all_ records in the table.
 
 ```
  id |        title         
@@ -50,7 +52,9 @@ Run this query and you should get the following **result set**.
 
 ## Exercise One
 
-Use a `SELECT` statement to list only values for the column `release_year` from the `albums` table. You should get a similar result set:
+Run a `SELECT` query to list values for the column `release_year` from the `albums` table.
+
+You should get a similar result set:
 
 ```
  release_year 
@@ -122,8 +126,10 @@ SELECT id, title, release_year, artist_id
 ## Primary and foreign keys
 
 You've probably noticed, by now, the two columns having `id` in their name (`id` and `artist_id`), and storing only numeric values. These columns are called "keys", and they come in two different types:
-  * The first column `id` is the **primary key**. Every table will (usually) have a primary key, and it is by convention always called `id`. Values for this column are used to uniquely identify each record, a bit like a social security number. You usually won't choose the value yourself, as databases can automatically assign a new value for this column when a new row is inserted, ensuring it's unique.
-  * The other column `artist_id` is called a **foreign key**. It is used to indicate which artist record (in the `artists` table) is associated with an album record. For example, in the last query from the example above, we've selected all albums having the value `1` for `artist_id`. This value `1` points to a **primary key** value in the `artists` table (this means all album records with the same `artist_id` belong to the same artist record).
+  * The first column `id` is the **primary key**. Every table has a primary key, and it is by convention always called `id`.  
+  Values for this column are used to uniquely identify each record, a bit like a social security number. You usually won't pick the value to insert, as PostgreSQL can automatically assign a new value for this column when a new row is inserted, ensuring it's unique.
+  * The second column `artist_id` is called a **foreign key**. It is used to indicate which artist record (in the `artists` table) is associated with an album record.  
+  For example, in the last query from the examples above, we've asked for all albums having the value `1` for `artist_id`. This value `1` points to a **primary key** value in the `artists` table (this means all album records with the same `artist_id` belong to the same artist record).
 
 ```
   albums                                                    artists
@@ -131,7 +137,7 @@ You've probably noticed, by now, the two columns having `id` in their name (`id`
  id |        title         | artist_id |                  | id |     name     
 ----+----------------------+-----------+                  |----+--------------
   1 | Doolittle            |         1 | ---------------> |  1 | Pixies
-  2 | Surfer Rosa          |         1 |                  
+  2 | Surfer Rosa          |         1 |                  |    |
   3 | Waterloo             |         2 | ---------------> |  2 | ABBA
   4 | Super Trouper        |         2 |                  
   5 | Bossanova            |         1 |                                
@@ -143,7 +149,7 @@ You've probably noticed, by now, the two columns having `id` in their name (`id`
 
 ## Exercise Two
 
-Use a filtered `SELECT` statement to list only the `release_year` of the album with title `'Bossanova'`.
+Run a filtered `SELECT` query to list only the `release_year` of the album with title `'Bossanova'`.
 
 You should get the following result set:
 
@@ -156,7 +162,7 @@ You should get the following result set:
 
 ## Challenge
 
-Find all titles of the albums released between 1980 and 1990 (inclusive).
+Find the titles of the albums released by 'Pixies' _and_ released between 1980 and 1990 (inclusive).
 
 You should get the following result set:
 
@@ -165,9 +171,7 @@ You should get the following result set:
 --------------------
  Doolittle
  Surfer Rosa
- Super Trouper
  Bossanova
- Fodder on My Wings
 ```
 
 [Next Challenge](04_updating_and_deleting_date.md)

@@ -12,17 +12,23 @@ Learn to write `UPDATE` and `DELETE` SQL queries.
 
 In this section you'll learn about two other type of SQL queries, `UPDATE` and `DELETE` which, as their name implies, are used to update and delete records.
 
-### Updating records
+## Updating records
+
+The general syntax of the `UPDATE` query is:
 
 ```sql
 UPDATE [table name] SET [column_name] = [new_value];
 ```
 
+And here's an example:
+
 ```sql
 UPDATE albums SET title = 'A new title';
 ```
 
-However this would update the `title` for **all records**, which is usually not what we want. Like for `SELECT` queries, we can use `WHERE` to specify which records to update. 
+However this would update the `title` for **all records**, which is usually not what we want. 
+
+As for `SELECT` queries, we can use `WHERE` to specify which records to update. 
 
 ```sql
 UPDATE [table name] SET [column_name] = [new_value], [other_column_name] = [other_new_value];
@@ -38,9 +44,11 @@ UPDATE [table name] SET [column_name] = [new_value]
   WHERE [conditions];
 ```
 
-### Deleting records
+## Deleting records
 
-The `DELETE` query has a slightly different syntax, but works in a similar fashion. Make sure you **always** specify conditions when using `DELETE` (unless you have good reasons not to), to avoid deleting the entire table.
+The `DELETE` query has a slightly different syntax, but works in a similar fashion.
+
+Make sure you **always** specify conditions when using `DELETE` (unless you have good reasons not to), to avoid deleting the entire table.
 
 ```sql
 DELETE FROM [table name] WHERE [conditions];

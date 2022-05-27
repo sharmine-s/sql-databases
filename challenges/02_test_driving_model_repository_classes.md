@@ -11,17 +11,16 @@ Learn to test-drive "Model" and "Repository" classes to SELECT records from the 
 
 In the realm of PostgreSQL, we manipulate tables, column names and records. However, in
 Ruby programs, we represent data using classes, objects and attributes. We
-therefore need a way to "transform" the data retrieved from the database into data that
+therefore need a way to transform the data retrieved from the database into data that
 can be used in our program. 
 
 To achieve this, you will learn how to build two kind of classes — they're regular Ruby
 classes, but designed to achieve a specific purpose in our program:
 * A **Model** class is used to hold a record's data.   
   For example, if we have a table `students`, we'd have a class `Student`, with attributes
-  for each column. A single object would hold the data for a specific student record. This class usually doesn't contain any logic, but is only used to hold data.
+  for each column. A single object holds the data for a specific student record. This class usually doesn't contain any logic, but is only used to hold data.
 
-* A **Repository** class implements methods to retrieve, create, update or delete data
-  to/from the database.  
+* A **Repository** class implements methods to run SQL queries on the database to retrieve, create, update or delete data.  
   For example, if we have one table `students`, we'd have a class `StudentRepository`
   containing methods that communicates with the database using SQL.
 
@@ -29,6 +28,7 @@ Here's how these classes would be mapped to a project structure:
 
 ```
 project/
+   app.rb
    lib/
       student.rb
       student_repository.rb
@@ -88,7 +88,7 @@ implement these two classes for a table. The outline is:
   6. Write test examples.
   7. Test-driven and implement the Repository class behaviour.
 
-## Exercise One
+## Exercise
 
 Work in the same project directory `music_library` for this exercise.
 
@@ -102,20 +102,7 @@ Work in the same project directory `music_library` for this exercise.
 
 @TODO video solution
 
-
-## Exercise Two
-
-Work in the same project directory `music_library` for this exercise.
-
-1. Copy the [Design Recipe Template](../resources/repository_class_recipe_template.md) and
-   adapt it to test-drive and implement the two classes for the `artists` table.  
-
-    **You should skip step 1**, as the table has already been created in your database.
-
-2. Write a small program in `app.rb` using the class `ArtistRepository` to print out the
-   list of artists to the terminal.
-
-@TODO video solution
+<!-- OMITTED -->
 
 ## Challenge
 

@@ -10,7 +10,7 @@ Learn to write `INSERT` SQL queries to create new records.
 
 ## Introduction
 
-We use `INSERT` to create new records into a table. The general syntax is:
+We use the `INSERT` query to create new records into a table. The general syntax is:
 
 ```sql
 INSERT INTO [table name]
@@ -18,9 +18,9 @@ INSERT INTO [table name]
   VALUES( [list of values] );
 ```
 
-In the list of columns, we can choose to specify only the columns we need to insert values in.
+In the list of columns, we can choose to specify only the columns we need to insert values for.
 
-For the sake of simplicity, it's best to always specify all columns to insert, except for the `id` column, as it is configured to be generated automatically by PostgreSQL.
+For the sake of simplicity, it's best to always specify _all_ columns to insert, except for the `id` column, as it is configured to be generated automatically by PostgreSQL.
 
 Run the following in the `psql` REPL:
 ```sql
@@ -43,6 +43,8 @@ INSERT INTO artists
 ## Challenge
 
 Insert a new artist of your choice, and a new album related to that artist ([here's an idea](https://en.wikipedia.org/wiki/OK_Computer), if you can't pick one).
+
+Then run a `SELECT` query to check the new artist is now in the table.
 
 [Next Challenge](06_using_table_plus.md)
 

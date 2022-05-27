@@ -56,14 +56,16 @@ class DatabaseConnection
 end
 ```
 
-Make sure you call the `connect` method at the top of the `spec_helper.rb` file.
+Call the `connect` method at the top of the `spec_helper.rb` file.
 
 ```ruby
 # file: spec/spec_helper.rb
 
 require 'database_connection'
 
-DatabaseConnection.connect('your_database_name')
+# Make sure this connects to your test database
+# (its name should end with '_test')
+DatabaseConnection.connect('your_database_name_test')
 ```
 
 ## The SQL seeds
@@ -104,11 +106,19 @@ result.each do |record|
 end
 ```
 
+Running the main file should output a list of records to the terminal.
+
 ## You're all set!
 
 Time to have a break and get yourself a hot drink.
 
 The next step might be to start [designing your database tables](../resources/single_table_design_recipe_template.ed.md), or [test-drive classes to interact with these tables](../resources/repository_class_recipe_template.ed.md). Happy coding!
+
+## Troubleshooting
+
+If you get a SQL error, use the error message to find out what went wrong — make sure the database name is correct, and that there are no syntax errors in the SQL query.
+
+If you spent some time debugging this setup, and you're not sure of what the problem is, ask your coach.
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 

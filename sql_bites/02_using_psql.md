@@ -8,15 +8,17 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to use the `psql` REPL to create a database and import data.
 
+<!-- OMITTED -->
+
 ## Introduction
 
 The database software (PostgreSQL) runs on our machine and manages the data we need to store.
 
 We interact with it using a language called **SQL**. It's a very different language from Ruby, JavaScript or Python. It comes with different commands to query, create or modify data stored in the database.
 
-On a high-level, SQL allows to us to send **queries** to the database and to things like:
+On a high-level, SQL allows to us to run **queries** on the database and ask things like:
   * Get all the records from a table.
-  * Get all the records from a table where some conditions are met (e.g `where the name is "John"`).
+  * Get all the records from a table where some conditions are met (e.g where the name is "John").
   * Create a new record.
   * Update or delete a record where some conditions are met.
   * And more complex things, like create new tables.
@@ -27,7 +29,7 @@ Programs that talk to a database to create, read, update or delete data are ofte
 
 PostgreSQL comes with a built-in REPL, `psql`, that we can use to directly type-in some SQL to interact with the database.
 
-Make sure you can run the command `psql -h 127.0.0.1` to enter the REPL:
+Run the command `psql -h 127.0.0.1` to enter the REPL:
 
 ```bash
 $ psql -h 127.0.0.1
@@ -42,11 +44,7 @@ leoht=#
 
 ## Creating a database
 
-First, something to keep in mind — a database **is not** the same thing as a table.
-
-A table is a structure that contains a list of similar "things", or records (e.g a list of students, or a list of bank accounts).
-
-A database can have many tables and the data they contain. You can create different databases within the same PostgreSQL program, each with their own tables.
+Remember that a **database is a collection of related tables**.
 
 Usually you will have one database (at least) for each project.
 
@@ -129,13 +127,13 @@ In the `psql` REPL, connect to the database `music_library`. You can run the usu
 $ psql -h 127.0.0.1 music_library
 ```
 
-Then run the following SQL query:
+Then, once in the `psql` REPL, run the following SQL query:
 
 ```sql
 SELECT * FROM artists;
 ```
 
-It everything worked, you should get the following output, also called a **result set** — you will learn more about this in the next bite. Well done on running your first SQL query!
+It everything worked, you should get the following result from the database. This result is called a **result set** — you will learn more about this in the next bite. Well done on running your first SQL query!
 
 ```
  id |     name     | genre 
