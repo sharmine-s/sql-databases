@@ -50,26 +50,6 @@ Run this query and you should get the following **result set**. We didn't specif
 
 (You can use the up and down arrow keys to scroll this result set in your terminal, and use `q` to exit and go back to the REPL).
 
-## Exercise One
-
-Run a `SELECT` query to list values for the column `release_year` from the `albums` table.
-
-You should get a similar result set:
-
-```
- release_year 
---------------
-         1989
-         1988
-         1974
-         1980
-         1990
-         2019
-         2020
-         1965
-         1978
-```
-
 ## Filtering
 
 So far you've been querying _all_ records from the table, without picking the ones you needed.
@@ -145,7 +125,29 @@ You've probably noticed, by now, the two columns having `id` in their name (`id`
 
 ## Demonstration
 
-@TODO Here's a video demonstration.
+[Here's a video demonstration.](https://www.youtube.com/watch?v=9wT1FVQbPZw&t=935s) Make sure you attempt the exercise before watching the solution.
+
+## Exercise One
+
+Run a `SELECT` query to list values for the column `release_year` from the `albums` table.
+
+You should get a similar result set:
+
+```
+ release_year 
+--------------
+         1989
+         1988
+         1974
+         1980
+         1990
+         2019
+         2020
+         1965
+         1978
+```
+
+[Solution video](https://www.youtube.com/watch?v=9wT1FVQbPZw&t=1619s)
 
 ## Exercise Two
 
@@ -159,6 +161,8 @@ You should get the following result set:
          1990
 (1 row)
 ```
+
+[Solution video](https://www.youtube.com/watch?v=9wT1FVQbPZw&t=1619s)
 
 ## Challenge
 

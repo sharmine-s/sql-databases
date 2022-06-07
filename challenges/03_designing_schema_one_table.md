@@ -26,9 +26,9 @@ Follow this [Design Recipe](../resources/single_table_design_recipe_template.md)
 
 ## Demonstration
 
-@TODO video demo
+[Here's a video demonstration.](https://www.youtube.com/watch?v=9eqpVn2ZsBY)
 
-## Exercise One
+## Exercise
 
 You should create a new database `student_directory_1` for this exercise.
 
@@ -44,9 +44,9 @@ I want to see a list of students' cohorts.
 ```
 
 1. Copy the Design Recipe template and use it to design the schema for that table.
-2. Create the table by loading the SQL table file in `psql`.
+2. Create the table by running the SQL table file with TablePlus or `psql`.
 
-@TODO video
+[Example Video solution](https://www.youtube.com/watch?v=uRSRBlV88mE)
 
 ## Challenge
 

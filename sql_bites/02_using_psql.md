@@ -44,13 +44,7 @@ leoht=#
 
 ## Creating a database
 
-Remember that a **database is a collection of related tables**.
-
-Usually you will have one database (at least) for each project.
-
-Below is a diagram showing a possible setup for a PostgreSQL program managing different databases, each one with its different tables.
-
-![](./resources/database-overview-diagram.png)
+Remember that a **database is a collection of related tables**. Usually you will have one database (at least) for each project.
 
 You will use the same database for these next SQL bites. Create it by running the `CREATE DATABASE` SQL query.
 
@@ -117,7 +111,7 @@ INSERT 0 4
 
 ## Demonstration
 
-@TODO Here's a video demonstration.
+[Here's a video demonstration.](https://www.youtube.com/watch?v=9wT1FVQbPZw&t=425s)
 
 ## Exercise
 

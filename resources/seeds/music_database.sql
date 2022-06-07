@@ -16,7 +16,7 @@ CREATE SEQUENCE IF NOT EXISTS albums_id_seq;
 
 -- Table Definition
 CREATE TABLE "public"."albums" (
-    "id" int4 NOT NULL DEFAULT nextval('albums_id_seq'::regclass),
+    "id" SERIAL,
     "title" text,
     "release_year" int4,
     "artist_id" int4,
@@ -31,7 +31,7 @@ CREATE SEQUENCE IF NOT EXISTS artists_id_seq;
 
 -- Table Definition
 CREATE TABLE "public"."artists" (
-    "id" int4 NOT NULL DEFAULT nextval('artists_id_seq'::regclass),
+    "id" SERIAL,
     "name" text,
     "genre" text,
     PRIMARY KEY ("id")

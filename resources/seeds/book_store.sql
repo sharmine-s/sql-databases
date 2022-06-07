@@ -6,7 +6,7 @@ CREATE SEQUENCE IF NOT EXISTS books_id_seq;
 
 -- Table Definition
 CREATE TABLE "public"."books" (
-    "id" int4 NOT NULL DEFAULT nextval('books_id_seq'::regclass),
+    "id" SERIAL,
     "title" text,
     "author_name" text,
     PRIMARY KEY ("id")

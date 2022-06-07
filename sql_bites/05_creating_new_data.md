@@ -33,12 +33,14 @@ INSERT INTO artists
 
 ## Demonstration
 
-@TODO Here's a video demonstration.
+[Here's a video demonstration.](https://www.youtube.com/watch?v=9wT1FVQbPZw&t=2218s) Make sure you attempt the exercise before watching the solution.
 
 ## Exercise
 
 1. `INSERT` a new record in `albums` with title 'Mezzanine', and release year 1998.
 2. We forgot to link this new record with the correct artist. Use an `UPDATE` query to update the `artist_id` of that new album with Massive Attack (it should have the `id` value 5).
+
+[Solution video](https://www.youtube.com/watch?v=9wT1FVQbPZw&t=2385s)
 
 ## Challenge
 

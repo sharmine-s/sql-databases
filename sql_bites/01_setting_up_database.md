@@ -16,7 +16,20 @@ PostgreSQL is free and open-source, and is also widely used in a lot of large-sc
 
 ## About relational databases
 
-A **database** is a collection of **tables**. Each table store a list of "things". For example, if our application needs to store **students** information, we'd have a table named "students".
+A **database** is a collection of **tables**. Each table store a list of "things". For example, if our application is a blogging system, we could have a table 'posts' and a table 'comments'.
+
+```
++----------------------------------------------------------+
+|                                                          |
+|   Database 'blog'                                        |
+|                                                          |
+|   +--------------------+       +--------------------+    |
+|   |                    |       |                    |    |
+|   |  Table 'posts'     |       |  Table 'comments'  |    |
+|   |                    |       |                    |    |
+|   +--------------------+       +--------------------+    |
++----------------------------------------------------------+
+```
 
 A table has **columns** for the attributes of the records, which are fixed and the same for each record (unless we're changing the schema of this table later). Each record is a **row** in the table.
 
@@ -60,7 +73,7 @@ If you have a different system, [follow the relevant instructions](https://www.p
 
 ## Demonstration
 
-@TODO Here's a video demonstration.
+[Here's a video introduction and demonstration.](https://www.youtube.com/watch?v=9wT1FVQbPZw)
 
 [Next Challenge](02_using_psql.md)
 

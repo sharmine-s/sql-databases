@@ -1,8 +1,8 @@
 # Setting up a project
 
-**@TODO A video demonstration is here. If you follow this directly, make sure you create a new directory and run the commands in that directory.**
+Learn to setup a Ruby project which connects to a database.
 
-Learn to setup a Ruby project using `pg` and SQL seeds.
+[A video demonstration is here.](https://www.youtube.com/watch?v=9pwchQJwc5Q).
 
 ## Initial setup
 

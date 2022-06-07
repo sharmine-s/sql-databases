@@ -37,9 +37,9 @@ Follow this [Design Recipe](../resources/two_table_design_recipe_template.md) to
 
 ## Demonstration
 
-@TODO video demo
+[Here's a video demonstration.](https://www.youtube.com/watch?v=k078sL3HBfU)
 
-## Exercise One
+## Exercise
 
 You should create a new database `student_directory_2` for this exercise.
 
@@ -66,7 +66,7 @@ I want to see a list of students' cohorts.
 1. Copy the Design Recipe template and use it to design the schema for the two tables.
 2. Create the tables by loading the SQL file in `psql`.
 
-@TODO video
+[Example solution](https://www.youtube.com/watch?v=k078sL3HBfU&t=1364s)
 
 ## Challenge
 

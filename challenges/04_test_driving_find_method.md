@@ -79,9 +79,7 @@ end
 
 ## Demonstration
 
-It's a bit easier to follow on the video.
-
-@TODO video demo
+[Here's a video demonstration.](https://www.youtube.com/watch?v=0Uog3mL--Nc)
 
 ## Exercise
 
@@ -94,11 +92,14 @@ method previously — following the steps 5 to 8 for the new `AlbumRepository#fi
 2. Modify the program in `app.rb` so it prints out to the terminal the data of the record
    with id `3`, using the new method.
 
+[Example Video solution](https://www.youtube.com/watch?v=NjHsqKMziuI)
+
 ## Challenge
 
 To work on this challenge, first:
   * Setup a new project directory `recipes_directory`.
   * Create a new database `recipes_directory`.
+  * Create a new test database `recipes_directory_test` for your tests.
 
 Then:
 

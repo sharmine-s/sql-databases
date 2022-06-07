@@ -34,7 +34,6 @@ As for `SELECT` queries, we can use `WHERE` to specify which records to update.
 UPDATE [table name] SET [column_name] = [new_value], [other_column_name] = [other_new_value];
 ```
 
-
 ### Updating specific records
 
 We can also use the `WHERE` keyword to specify conditions, like for `SELECT` queries. Only records matching these conditions will be updated.
@@ -59,13 +58,15 @@ DELETE FROM [table name];
 
 ## Demonstration
 
-@TODO Here's a video demonstration.
+[Here's a video demonstration.](https://www.youtube.com/watch?v=9wT1FVQbPZw&t=1710s) Make sure you attempt the exercise before watching the solution.
 
 ## Exercise
 
 Update the `release_year` of the album with ID `3` to the value `1972`.
 
 Use a `SELECT` query to get that specific record and verify it has been updated.
+
+[Solution video](https://www.youtube.com/watch?v=9wT1FVQbPZw&t=2115s)
 
 ## Challenge
 

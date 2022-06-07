@@ -16,7 +16,7 @@ CREATE SEQUENCE IF NOT EXISTS posts_id_seq;
 
 -- Table Definition
 CREATE TABLE "public"."posts" (
-    "id" int4 NOT NULL DEFAULT nextval('posts_id_seq'::regclass),
+    "id" SERIAL,
     "title" text,
     PRIMARY KEY ("id")
 );
@@ -38,7 +38,7 @@ CREATE SEQUENCE IF NOT EXISTS tags_id_seq;
 
 -- Table Definition
 CREATE TABLE "public"."tags" (
-    "id" int4 NOT NULL DEFAULT nextval('tags_id_seq'::regclass),
+    "id" SERIAL,
     "name" text,
     PRIMARY KEY ("id")
 );

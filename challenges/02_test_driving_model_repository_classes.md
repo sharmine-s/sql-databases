@@ -55,9 +55,7 @@ also called **object-relational mapping**.
 
 ## Demonstration
 
-It's a bit easier to follow on the video.
-
-@TODO video demo
+[It's a bit easier to follow on the video.](https://www.youtube.com/watch?v=fX_IXqDVplg)
 
 ## Designing a Repository class
 
@@ -100,7 +98,7 @@ Work in the same project directory `music_library` for this exercise.
 2. Write a small program in `app.rb` using the class `AlbumRepository` to print out the
    list of albums to the terminal.
 
-@TODO video solution
+[Video solution](https://www.youtube.com/watch?v=NhAS1pnjfK4)
 
 <!-- OMITTED -->
 

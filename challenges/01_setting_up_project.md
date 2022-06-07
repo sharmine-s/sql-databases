@@ -24,6 +24,10 @@ This project will use a few components:
 
 Follow the guidance linked above to create a new project `music_library`. Then move on to the next step.
 
+## Demonstration
+
+[A video demonstration is here.](https://www.youtube.com/watch?v=9pwchQJwc5Q).
+
 ## Setting up the test database
 
 We don't want our RSpec tests to use and modify with the data used by our program users. Therefore we need to create a new database which will be used only by RSpec tests. Such a database is usually suffixed by `_test`. Let's create a test version of the `music_library` database:
@@ -41,6 +45,7 @@ Then make sure you connect to this database in your `spec_helper.rb` file:
 
 DatabaseConnection.connect('music_library_test')
 ```
+
 
 [Next Challenge](02_test_driving_model_repository_classes.md)
 
