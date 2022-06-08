@@ -5,7 +5,11 @@ They contain a mixture of text and video, and may contain some challenge exercis
 proposed solutions. [Read more about how to use Makers
 Vines.](https://github.com/makersacademy/course/blob/main/labels/vines.md)_
 
-Learn to test-drive "Repository" class methods to INSERT and DELETE.
+Learn to test-drive "Repository" class methods to INSERT, DELETE and UPDATE.
+
+## Demonstration
+
+[Here's a video demonstration](https://www.youtube.com/watch?v=FQMipxm2hQ8) of designing the create, delete and update methods.
 
 ## The `create` method
 
@@ -43,11 +47,9 @@ all_students = repository.all
 # all_students should contain the student 'Alice' created above.
 ```
 
-## Demonstration
+## Exercise
 
-@TODO video demo
-
-## Exercise One
+_Work in the project directory `music_library` you've worked on before._
 
 Test-drive the method `.create` on the class `AlbumRepository` from the previous project
 `music_library`.
@@ -70,31 +72,9 @@ all_albums = repository.all
 1. Encode the expected behaviour above as a new test for the `AlbumRepository` class.
 2. Implement the `.create` method to make this test pass.
 
-@TODO video
+[Example solution](https://www.youtube.com/watch?v=FQMipxm2hQ8&t=1620s)
 
-## Exercise Two
-
-Test-drive the method `.delete` on the class `AlbumRepository` from the previous exercise.
-It should delete a record given its ID.
-
-Make sure you describe the design of this new method before test-driving it.
-
-```ruby
-repository = AlbumRepository.new
-
-all_albums = repository.all
-
-last_album = albums.last
-
-repository.delete(last_album) # Performs a DELETE query to the database.
-
-new_all_albums = repository.all # Should *not* contain the deleted album.
-```
-
-1. Encode the expected behaviour above as a new test for the `AlbumRepository` class.
-2. Implement the `.delete` method to make this test pass.
-
-@TODO video
+<!-- OMITTED -->
 
 ## Challenge
 

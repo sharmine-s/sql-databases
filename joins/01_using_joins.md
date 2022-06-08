@@ -144,7 +144,7 @@ SELECT albums.id AS album_id,
 
 ## Demonstration
 
-@TODO Here's a video demonstration.
+[Here's a video demonstration.](https://www.youtube.com/watch?v=5DT7XuOqXsI)
 
 ## Exercise One
 
@@ -161,7 +161,7 @@ You should get the following result set:
   7 | Folklore
 ```
 
-@TODO video
+[Example solution](https://www.youtube.com/watch?v=5DT7XuOqXsI&t=710s)
 
 ## Exercise Two
 
@@ -175,7 +175,7 @@ You should get the following result set:
   2 | Surfer Rosa
 ```
 
-@TODO video
+[Example solution](https://www.youtube.com/watch?v=5DT7XuOqXsI&t=841s)
 
 ## Challenge
 

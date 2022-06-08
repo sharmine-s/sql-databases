@@ -1,4 +1,4 @@
-# Test-driving a Repository class with two related Models
+# Test-driving a Repository method with a JOIN
 
 _**This is a Makers Bite.** Bites are designed to train specific skills or
 tools. They contain an intro, a demonstration video, some exercises with an
@@ -7,6 +7,10 @@ your learning. [Read more about how to use Makers
 Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to test-drive "Model" and "Repository" classes to SELECT related records from the database.
+
+## Demonstration
+
+[It's a bit easier to follow on the video.](https://www.youtube.com/watch?v=9G7XmM2uoR0)
 
 ## Intro
 
@@ -119,16 +123,11 @@ class ArtistRepository
 end
 ```
 
-
-## Demonstration
-
-@TODO video demo
-
 ## Exercise
 
 Use the database `student_directory_2` from the previous section.
 
-If you didn't design and create the tables yourself, download the SQL exemplar and load it into the database.
+If you didn't design and create the tables previously, [load this SQL into the database](../resources/seeds/student_directory_2.sql).
 
 1. Test-drive and implement the three classes for the `students` and `cohorts` table.   
   You should end up with three classes:
