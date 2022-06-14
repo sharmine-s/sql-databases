@@ -12,8 +12,8 @@ You will achieve these by working through a sequence of exercises and challenges
 Work through each of these exercises in sequence.
 
 This module is designed to be worked on during a week. Here's a suggested pace — you might find you need more (or less) time than this to complete the challenges, and that's OK.
- * Days 1 and 2: SQL bites.
- * Days 3 and 4: Challenges.
+ * Day 1: SQL bites.
+ * Days 2-4: Challenges.
  * Day 5: Joins and Many-to-Many.
  * Solo challenge at the end of the week.
 
@@ -43,7 +43,8 @@ Some of these challenges include [Process Feedback Challenges](https://github.co
 3. [Designing a schema with one table](./challenges/03_designing_schema_one_table.md). 📡.
 4. [Designing a Repository class "find" method](./challenges/04_test_driving_find_method.md).
 5. [Designing a schema with two related tables](./challenges/05_designing_schema_two_tables.md). 
-6. [Designing  a Repository class "create" and "delete methods](./challenges/06_test_driving_write_operations.md). 📡.
+6. [Designing a Repository class "create" and "delete methods](./challenges/06_test_driving_write_operations.md). 📡.
+7. [Wrapping in an Application class](./challenges/07_wrapping_in_application_class.md)
 
 <!-- OMITTED -->
 
@@ -61,7 +62,9 @@ This is advanced material. Work on it only if you've completed all the challenge
 
 Do this project solo. It is designed to help you test all of your skills for this module.
 
-[Shop Manager](./projects/shop_project.md)
+Fork the repo and work on your local fork, then open a pull request when you're done.
+
+[Shop Manager](https://github.com/makersacademy/shop-manager-challenge)
 
 
 

@@ -1,4 +1,4 @@
-# Solo Project
+# Shop Manager Project
 
 Here is a project to test the skills learned in this module.
 

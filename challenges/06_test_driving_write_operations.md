@@ -122,6 +122,8 @@ Then:
 [After you're done, submit your recording
 here](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=db_as03).
 
+[Next Challenge](07_wrapping_in_application_class.md)
+
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 
 ---

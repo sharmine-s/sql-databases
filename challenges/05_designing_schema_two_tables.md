@@ -39,6 +39,12 @@ Follow this [Design Recipe](../resources/two_table_design_recipe_template.md) to
 
 [Here's a video demonstration.](https://www.youtube.com/watch?v=k078sL3HBfU)
 
+## Diagramming
+
+It's useful to diagram as tables and their relationships become more complex, so it's easier to communicate and visualise the database schema. Here's an example of the schema created in the video demonstration, using [Excalidraw](https://excalidraw.com/).
+
+![The concerts and venues table schema](./resources/db-schema-diagram.png)
+
 ## Exercise
 
 You should create a new database `student_directory_2` for this exercise.
