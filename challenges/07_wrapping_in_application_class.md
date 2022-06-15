@@ -28,11 +28,13 @@ require_relative './lib/artist_repository'
 class Application
 
   # The Application class initializer
-  # takes three arguments:
+  # takes four arguments:
+  #  * The database name to call `DatabaseConnection.connect`
   #  * the Kernel object as `io` (so we can mock the IO in our tests)
   #  * the AlbumRepository object (or a double of it)
   #  * the ArtistRepository object (or a double of it)
-  def initialize(io, album_repository, artist_repository)
+  def initialize(database_name, io, album_repository, artist_repository)
+    DatabaseConnection.connect(database_name)
     @io = io
     @album_repository = album_repository
     @artist_repository = artist_repository
@@ -51,12 +53,15 @@ end
 
 # If we run this file using `ruby app.rb`,
 # run the app.
-app = Application.new(
-  Kernel,
-  AlbumRepository.new,
-  ArtistRepository.new
-)
-app.run
+if __FILE__ == $0
+  app = Application.new(
+    'music_library',
+    Kernel,
+    AlbumRepository.new,
+    ArtistRepository.new
+  )
+  app.run
+end
 ```
 
 _If you're not sure why we're giving the `Kernel` as an argument to our class, [see this bite about unit-testing IO](https://github.com/makersacademy/golden-square/blob/main/mocking_bites/05_unit_testing_terminal_io_bite.md)_
