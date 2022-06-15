@@ -32,10 +32,10 @@ Follow the guidance linked above to create a new project `music_library`. Then m
 
 We don't want our RSpec tests to use and modify with the data used by our program users. Therefore we need to create a new database which will be used only by RSpec tests. Such a database is usually suffixed by `_test`. Let's create a test version of the `music_library` database:
 
-```
-psql -h 127.0.0.1
+```bash
+# In your terminal
 
-=# CREATE DATABASE music_library_test
+createdb music_library_test
 ```
 
 Then make sure you connect to this database in your `spec_helper.rb` file:

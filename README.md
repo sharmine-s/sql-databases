@@ -1,5 +1,8 @@
 # Databases
 
+_Coaching this? Read the coach guidance
+[here.](https://github.com/makersacademy/slug/blob/main/materials/universe/databases_web_applications/databases/HOW_TO_COACH.x.md)_
+
 In this module your objectives are:
   * **Design a database schema with at least two tables** from a specification, including a one-to-many relationship between two tables, and create the schema in a database using SQL.
   * **Use SQL to query a database** to read data from one table or resulting of a join, create new records, update and delete.

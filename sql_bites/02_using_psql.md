@@ -67,6 +67,12 @@ CREATE DATABASE
 
 You can now exit the REPL with `\q`.
 
+_You can also create a new database from the terminal (without using `psql`) with the following command:_
+
+```bash
+createdb music_library
+```
+
 ## Importing the seed data
 
 You've created a database, but it is empty for now, without any table.
