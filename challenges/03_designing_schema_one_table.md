@@ -50,10 +50,6 @@ I want to see a list of students' cohorts.
 
 ## Challenge
 
-This is a process feedback challenge. That means you should record yourself doing it and
-submit that recording to your coach for feedback. [How do I do
-this?](https://github.com/makersacademy/golden-square/blob/main/pills/process_feedback_challenges.md)
-
 You should create a new database `movies_directory` for this exercise.
 
 Infer the table schema from these user stories.
@@ -75,7 +71,6 @@ I want to see a list of movies' release year.
 2. Create the table by loading the SQL table file in `psql`.
 3. To verify your work, make sure to run an `INSERT` query to insert a new movie record, and then a `SELECT` query to list the records.
 
-[After you're done, submit your recording here](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=db_as02).
 
 [Next Challenge](04_test_driving_find_method.md)
 

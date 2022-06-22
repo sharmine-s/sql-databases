@@ -27,9 +27,7 @@ posts = post_repository.find_by_tag('coding')
 | ----------- |----|-----------| ----------------------------------------------|----------|
 | `find_by_tag` |Find all posts for the given tag| A tag (string) | `SELECT ... JOIN ` | Array of `Post` |
 
-## Demonstration
-
-@TODO video demo
+<!-- OMITTED -->
 
 ## Exercise 
 
@@ -37,7 +35,7 @@ Setup a new project `blog` for this exercise.
 
 Test-drive and implement Model and Repository classes for the table `posts`, with the method `PostRepository#find_by_tag` having the behaviour described above.
 
-@TODO video
+<!-- OMITTED -->
 
 ## Challenge
 

@@ -110,7 +110,7 @@ this?](https://github.com/makersacademy/golden-square/blob/main/pills/process_fe
 
 To work on this challenge, first:
   * Setup a new project directory `book_store` [following the
-    guidance](../pills/setting_up_database_project.ed.md).
+    guidance](../pills/setting_up_database_project.md).
   * Create a new database `book_store`.
   * [Import this SQL seed into that new database.](../resources/seeds/book_store.sql)
 

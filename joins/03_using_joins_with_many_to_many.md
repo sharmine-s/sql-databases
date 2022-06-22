@@ -84,9 +84,7 @@ INSERT INTO tags (name) VALUES ('poetry');
 INSERT INTO posts_tags (post_id, tag_id) VALUES (3, 5);
 ```
 
-## Demonstration
-
-@TODO video demo
+<!-- OMITTED -->
 
 ## Exercise One
 
@@ -102,7 +100,7 @@ You should get the following result set:
   6 | A foodie week in Spain
 ```
 
-@TODO video
+<!-- OMITTED -->
 
 ## Challenge
 

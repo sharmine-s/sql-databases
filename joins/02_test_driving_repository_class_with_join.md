@@ -137,7 +137,7 @@ If you didn't design and create the tables previously, [load this SQL into the d
 
 2. Write a small program in `app.rb` using the class `CohortRepository` to print out the data of one cohort with its students to the terminal.
 
-@TODO video
+<!-- OMITTED -->
 
 ## Challenge
 

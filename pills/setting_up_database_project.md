@@ -112,7 +112,7 @@ Running the main file should output a list of records to the terminal.
 
 Time to have a break and get yourself a hot drink.
 
-The next step might be to start [designing your database tables](../resources/single_table_design_recipe_template.ed.md), or [test-drive classes to interact with these tables](../resources/repository_class_recipe_template.ed.md). Happy coding!
+The next step might be to start [designing your database tables](../resources/single_table_design_recipe_template.md), or [test-drive classes to interact with these tables](../resources/repository_class_recipe_template.md). Happy coding!
 
 ## Troubleshooting
 

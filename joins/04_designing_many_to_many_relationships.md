@@ -28,9 +28,7 @@ When designing a many-to-many relationship, you will need a third table, acting 
 
 You can follow steps from this [Design Recipe](../resources/two_tables_many_to_many_design_recipe_template.md) to design the schema for two related tables with a Many-to-Many relationship.
 
-## Demonstration
-
-@TODO
+<!-- OMITTED -->
 
 ## Exercise
 
