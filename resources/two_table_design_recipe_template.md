@@ -122,7 +122,9 @@ CREATE TABLE albums (
   release_year int,
 -- The foreign key name is always {other_table_singular}_id
   artist_id int,
-  constraint fk_artist foreign key(artist_id) references artists(id)
+  constraint fk_artist foreign key(artist_id)
+    references artists(id)
+    on delete cascade
 );
 
 ```

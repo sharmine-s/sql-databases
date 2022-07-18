@@ -74,6 +74,17 @@ I want to see a list of students' cohorts.
 
 [Example solution](https://www.youtube.com/watch?v=k078sL3HBfU&t=1364s)
 
+## Configuring "Cascade" Deletion
+
+When a record is deleted (e.g when a row in `artists` is deleted), we can configure the database to automatically remove related records referencing it (e.g delete all related `albums`), so there are no "orphans" records - this is done using the `on delete cascade` SQL option, when creating the table:
+
+```sql
+-- This snippet is taken from the Two Tables Schema Design Recipe document
+constraint fk_artist foreign key(artist_id)
+    references artists(id) 
+    on delete cascade 
+```
+
 ## Challenge
 
 You should create a new database `blog` for this challenge.

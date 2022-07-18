@@ -42,6 +42,12 @@ leoht=#
 
 *The `-h` option specifies the IP address of the machine PostgreSQL runs on. Here, we use `127.0.0.1`, since it's the local IP address of your own machine, on which PostgreSQL runs.*
 
+### If the above fails
+
+If you get an error similar to `connection to server at "127.0.0.1", port 5432 failed: FATAL: database "leoht" does not exist`  - you can use the `createdb` command to create the default database `psql` tries to connect to, which is named after your macOS system username.
+
+For example, my macOS username is `leoht`, so I'd run the bash command: `createdb leoht` - this should fix the connection error.
+
 ## Creating a database
 
 Remember that a **database is a collection of related tables**. Usually you will have one database (at least) for each project.

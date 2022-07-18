@@ -53,22 +53,20 @@ end
 
 # If we run this file using `ruby app.rb`,
 # run the app.
-if __FILE__ == $0
-  app = Application.new(
-    'music_library',
-    Kernel,
-    AlbumRepository.new,
-    ArtistRepository.new
-  )
-  app.run
-end
+app = Application.new(
+  'music_library',
+  Kernel,
+  AlbumRepository.new,
+  ArtistRepository.new
+)
+app.run
 ```
 
 _If you're not sure why we're giving the `Kernel` as an argument to our class, [see this bite about unit-testing IO](https://github.com/makersacademy/golden-square/blob/main/mocking_bites/05_unit_testing_terminal_io_bite.md)_
 
 ## Exercise
 
-Test-drive and implement an `Application` class for the `music_library` project.
+From the class interface describe above, test-drive (using RSpec) and implement an `Application` class for the `music_library` project.
 
 Running the program should have the following behaviour in the terminal:
 

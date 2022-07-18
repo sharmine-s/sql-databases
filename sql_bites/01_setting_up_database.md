@@ -71,6 +71,10 @@ $ brew services start postgresql
 
 If you have a different system, [follow the relevant instructions](https://www.postgresql.org/download/), and you're not sure, ask your coach. If you have any trouble with the installation process, it's probably better to ask your coach for help, rather than spending too much time figuring it out.
 
+## On Requiring Files
+
+When building more complex projects containing many different files and classes spread across different directories, it can be challenging to remember how to require files. [Use this guidance as reference material](https://github.com/makersacademy/course/blob/main/pills/require.md) to help with this.
+
 ## Demonstration
 
 [Here's a video introduction and demonstration.](https://www.youtube.com/watch?v=9wT1FVQbPZw)
