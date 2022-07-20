@@ -19,14 +19,13 @@ Here is a design for the `create` method of the example class `StudentRepository
 
 | Method      |Job| Arguments | SQL query                                     | Returns  |
 | ----------- |----|-----------| ----------------------------------------------|----------|
-| `create`      |Insert a student| A `Student` object | `INSERT INTO students (name, cohort_name) VALUES ($1, $2) ` | - |
-
+| `create`      |Insert a student| A `Student` object | `INSERT INTO students (name, cohort_name) VALUES ($1, $2); ` | - |
 
 
 As the `INSERT` query contains some dynamic parts (the new values to insert), we need to use SQL parameters as well.
 
   ```sql
-  INSERT INTO students (name, cohort_name) VALUES ($1, $2)
+  INSERT INTO students (name, cohort_name) VALUES ($1, $2);
   ```
 
 Here is the expected behaviour for the method:
@@ -45,6 +44,25 @@ repository.create(student) # Performs the INSERT query
 all_students = repository.all 
 
 # all_students should contain the student 'Alice' created above.
+```
+
+## The `delete` method
+
+The design of the `delete` method is similar to the `find` method previously implemented — taking an ID as an argument. However, it runs a `DELETE` SQL query to delete a specific row.
+
+| Method      |Job| Arguments | SQL query                                     | Returns  |
+| ----------- |----|-----------| ----------------------------------------------|----------|
+| `delete`      |Delete a student| A (numeric) `id` | `DELETE FROM students WHERE id = $1;` | - |
+
+Here is the expected behaviour for the method:
+
+```ruby
+repository = StudentRepository.new
+
+# Delete the student with id=1
+repository.delete(1)
+
+repository.all # The student with id=1 should now be removed.
 ```
 
 ## Exercise
