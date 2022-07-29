@@ -19,6 +19,10 @@ This module is designed to be worked on during a week. Here's a suggested pace â
  * Days 2-5: Rest of the challenges
  * Solo challenge at the end of the week.
 
+### Phase Zero: Get started
+
+[Watch this introduction video](https://www.youtube.com/watch?v=5PJQscmAEI4) before starting the sequence below.
+
 ### Phase One: SQL Bites
 
 Go through these exercises and learn how to setup PostgreSQL and use SQL to read and manipulate data stored in an existing database.
