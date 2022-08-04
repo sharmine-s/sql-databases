@@ -51,15 +51,19 @@ class Application
   end
 end
 
-# If we run this file using `ruby app.rb`,
-# run the app.
-app = Application.new(
-  'music_library',
-  Kernel,
-  AlbumRepository.new,
-  ArtistRepository.new
-)
-app.run
+# Don't worry too much about this if statement. It is basically saying "only
+# run the following code if this is the main file being run, instead of having
+# been required or loaded by another file.
+# If you want to learn more about __FILE__ and $0, see here: https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Variables_and_Constants#Pre-defined_Variables
+if __FILE__ == $0
+  app = Application.new(
+    'music_library',
+    Kernel,
+    AlbumRepository.new,
+    ArtistRepository.new
+  )
+  app.run
+end
 ```
 
 _If you're not sure why we're giving the `Kernel` as an argument to our class, [see this bite about unit-testing IO](https://github.com/makersacademy/golden-square/blob/main/mocking_bites/05_unit_testing_terminal_io_bite.md)_
