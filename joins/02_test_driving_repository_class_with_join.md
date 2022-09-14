@@ -48,7 +48,7 @@ artist = repository.find_with_albums(1)
 artist.id # 1
 
 artist.albums # is an array of Album objects
-artist.albums.id # 12
+artist.albums.last.id # 12
 ```
 
 We'll need to add the attribute `albums` to the `Artist` class. By default, this would be an empty array.
@@ -119,6 +119,8 @@ class ArtistRepository
 
       artist.albums << album
     end
+
+    return artist
   end
 end
 ```
