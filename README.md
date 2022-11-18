@@ -1,12 +1,13 @@
 # Databases
 
 _Coaching this? Read the coach guidance
-[here.](https://github.com/makersacademy/slug/blob/main/materials/universe/databases_web_applications/databases/HOW_TO_COACH.x.md)_
+[here.](https://github.com/makersacademy/slug/blob/main/materials/universe/distributed_applications/databases/HOW_TO_COACH.x.md)_
 
 In this module your objectives are:
   * **Design a database schema with at least two tables** from a specification, including a one-to-many relationship between two tables, and create the schema in a database using SQL.
   * **Use SQL to query a database** to read data from one table or resulting of a join, create new records, update and delete.
   * **Integrate a relational database to a program** by test-driving classes which implement CRUD methods to send SQL queries to a database.
+  * **Explain how your program communicates with the database** by creating a sequence diagram.
 
 You will achieve these by working through a sequence of exercises and challenges over one week.
 
@@ -46,11 +47,12 @@ Some of these challenges include [Process Feedback Challenges](https://github.co
 
 1. [Setting up a project](./challenges/01_setting_up_project.md).
 2. [Designing a Repository class](./challenges/02_test_driving_model_repository_classes.md). 📡.
-3. [Designing a schema with one table](./challenges/03_designing_schema_one_table.md). 
-4. [Designing a Repository class "find" method](./challenges/04_test_driving_find_method.md). 📡.
-5. [Designing a schema with two related tables](./challenges/05_designing_schema_two_tables.md). 
-6. [Designing a Repository class "create" and "delete methods](./challenges/06_test_driving_write_operations.md). 📡.
-7. [Wrapping in an Application class](./challenges/07_wrapping_in_application_class.md)
+3. [Diagramming a database application](./challenges/03_creating_sequence_diagrams.md). 📡.
+3. [Designing a schema with one table](./challenges/04_designing_schema_one_table.md). 
+4. [Designing a Repository class "find" method](./challenges/05_test_driving_find_method.md).
+5. [Designing a schema with two related tables](./challenges/06_designing_schema_two_tables.md). 
+6. [Designing a Repository class "create" and "delete methods](./challenges/07_test_driving_write_operations.md). 📡.
+7. [Wrapping in an Application class](./challenges/08_wrapping_in_application_class.md)
 
 ### Phase Three: Joins and Many-to-Many
 

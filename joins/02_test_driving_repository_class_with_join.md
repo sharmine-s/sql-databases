@@ -143,7 +143,7 @@ If you didn't design and create the tables previously, [load this SQL into the d
 
 ## Challenge
 
-Use the database `blog` you created [in this earlier challenge.](../challenges/05_designing_schema_two_tables.md#challenge)
+Use the database `blog` you created [in this earlier challenge.](../challenges/06_designing_schema_two_tables.md#challenge)
 
 1. Test-drive and implement the three classes for the `posts` and `comments` tables.
 
