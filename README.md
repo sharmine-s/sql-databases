@@ -64,7 +64,7 @@ This is advanced material. Work on it only if you've completed all the challenge
 4. [Designing Many-to-many relationships](./joins/04_designing_many_to_many_relationships.md)
 5. [Designing a Repository class with Many-to-many](./joins/05_repository_classes_many_to_many.md)
 
-### Phase Three: Solo Project
+### Phase Four: Solo Project
 
 Do this project solo. It is designed to help you test all of your skills for this module.
 

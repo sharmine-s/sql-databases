@@ -139,7 +139,7 @@ Then, once in the `psql` REPL, run the following SQL query:
 SELECT * FROM artists;
 ```
 
-It everything worked, you should get the following result from the database. This result is called a **result set** — you will learn more about this in the next bite. Well done on running your first SQL query!
+If everything worked, you should get the following result from the database. This result is called a **result set** — you will learn more about this in the next bite. Well done on running your first SQL query!
 
 ```
  id |     name     | genre 
@@ -150,6 +150,7 @@ It everything worked, you should get the following result from the database. Thi
   4 | Lorde        | Pop
 (4 rows)
 ```
+
 
 [Next Challenge](03_querying_data.md)
 

@@ -79,6 +79,7 @@ When building more complex projects containing many different files and classes 
 
 [Here's a video introduction and demonstration.](https://www.youtube.com/watch?v=9wT1FVQbPZw)
 
+
 [Next Challenge](02_using_psql.md)
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
