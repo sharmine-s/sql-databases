@@ -38,7 +38,7 @@ UPDATE [table name] SET [column_name] = [new_value], [other_column_name] = [othe
 ```
 ```sql
 UPDATE albums SET title = 'New title', date = '16th of November 2020';
-``
+```
 This will update the titles and dates of all the records of the albums table. 
 
 #### Updating specific records
