@@ -14,33 +14,45 @@ In this section you'll learn about two other type of SQL queries, `UPDATE` and `
 
 ## Updating records
 
+To update existing records, you can use an UPDATE statement. Let’s look at how to do that for all records and then for a subset of records.
+
 The general syntax of the `UPDATE` query is:
 
 ```sql
 UPDATE [table name] SET [column_name] = [new_value];
 ```
 
-And here's an example:
+### Updating several records
+
+Here's a simple example of how to build an `UPDATE` query:
 
 ```sql
 UPDATE albums SET title = 'A new title';
 ```
+This will update the title column all of the records in the albums table.
 
-However this would update the `title` for **all records**, which is usually not what we want. 
-
-As for `SELECT` queries, we can use `WHERE` to specify which records to update. 
+We can also update several columns at once when creating an UPDATE query: 
 
 ```sql
 UPDATE [table name] SET [column_name] = [new_value], [other_column_name] = [other_new_value];
 ```
+```sql
+UPDATE albums SET title = 'New title', date = '16th of November 2020';
+``
+This will update the titles and dates of all the records of the albums table. 
 
-### Updating specific records
+#### Updating specific records
 
 We can also use the `WHERE` keyword to specify conditions, like for `SELECT` queries. Only records matching these conditions will be updated.
 
 ```sql
 UPDATE [table name] SET [column_name] = [new_value]
   WHERE [conditions];
+```
+
+```sql
+UPDATE albums SET title = 'New title'
+  WHERE date='16th of November 2020';
 ```
 
 ## Deleting records
