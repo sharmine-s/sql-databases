@@ -29,7 +29,7 @@ Here's a simple example of how to build an `UPDATE` query:
 ```sql
 UPDATE albums SET title = 'A new title';
 ```
-This will update the title column all of the records in the albums table.
+This will update the title column of all the records in the albums table.
 
 We can also update several columns at once when creating an UPDATE query: 
 
@@ -37,11 +37,11 @@ We can also update several columns at once when creating an UPDATE query:
 UPDATE [table name] SET [column_name] = [new_value], [other_column_name] = [other_new_value];
 ```
 ```sql
-UPDATE albums SET title = 'New title', date = '16th of November 2020';
+UPDATE albums SET title = 'New title', release_year = '2020';
 ```
 This will update the titles and dates of all the records of the albums table. 
 
-#### Updating specific records
+### Updating specific records
 
 We can also use the `WHERE` keyword to specify conditions, like for `SELECT` queries. Only records matching these conditions will be updated.
 
@@ -82,9 +82,10 @@ Use a `SELECT` query to get that specific record and verify it has been updated.
 
 ## Challenge
 
-Delete the album with ID `12`.
+1. Update the title and release_year of the album with ID 1 (in a single query). Then use a SELECT query to get the list of albums and verify that one has been updated.
 
-Use a `SELECT` query to get the list of albums and verify that one has been deleted.
+2. Delete the album with ID 12. Then use a SELECT query to get the list of albums and verify that one has been deleted.
+
 
 [Next Challenge](05_creating_new_data.md)
 
