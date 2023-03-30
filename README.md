@@ -51,7 +51,7 @@ Some of these challenges include [Process Feedback Challenges](https://github.co
 3. [Designing a schema with one table](./challenges/04_designing_schema_one_table.md). 
 4. [Designing a Repository class "find" method](./challenges/05_test_driving_find_method.md).
 5. [Designing a schema with two related tables](./challenges/06_designing_schema_two_tables.md). 
-6. [Designing a Repository class "create" and "delete methods](./challenges/07_test_driving_write_operations.md). 📡.
+6. [Designing a Repository class "create" and "delete" methods](./challenges/07_test_driving_write_operations.md). 📡.
 7. [Wrapping in an Application class](./challenges/08_wrapping_in_application_class.md)
 
 ### Phase Three: Joins and Many-to-Many

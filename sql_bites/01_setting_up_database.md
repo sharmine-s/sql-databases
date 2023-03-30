@@ -52,14 +52,38 @@ Table: students
 
 ## Setup
 
-First, you will need to install PostgreSQL on your machine. You can do this using Homebrew on macOS.
+First, you will need to install PostgreSQL on your machine. You can do this
+using Homebrew on macOS. Here, we're using PostgreSQL 15 but if there's a newer
+release you're asked to use, just substitute in that version number instead:
 
 ```bash
 # Install postgresql.
-$ brew install postgresql
+$ brew install postgresql@15
+```
 
-# (...)
+Once installed, you'll need to make sure that installation directory is on your
+`PATH` environment variable. In the output from the Homebrew installation you
+just ran, should be a line which looks like this one:
 
+```bash
+echo 'export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"' >> ~/.zshrc
+```
+
+which you should copy, paste into the terminal and run.
+
+Afterwards, either start a new terminal session or just run `zsh`.
+
+<details>
+  <summary>Why did we do that step? (optional details)</summary>
+
+  We have just added a line to a file in our home directory, called `.zshrc`.
+  The contents of this file are run whenever you start a new session, and you
+  can force a new session to be used by typing `zsh`. Given this new line
+  updates our `PATH` environment variable, we need that line to run before it
+  can be used.
+</details>
+
+```bash
 # Run this after the installation
 # to start the postgresql software
 # in the background.
@@ -69,7 +93,7 @@ $ brew services start postgresql
 ==> Successfully started `postgresql` (label: homebrew.mxcl.postgresql)
 ```
 
-If you have a different system, [follow the relevant instructions](https://www.postgresql.org/download/), and you're not sure, ask your coach. If you have any trouble with the installation process, it's probably better to ask your coach for help, rather than spending too much time figuring it out.
+If you have a different system, [follow the relevant instructions](https://www.postgresql.org/download/), and if you're not sure, ask your coach. If you have any trouble with the installation process, it's probably better to ask your coach for help, rather than spending too much time figuring it out.
 
 ## On Requiring Files
 
