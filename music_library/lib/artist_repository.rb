@@ -9,7 +9,6 @@ class ArtistRepository
   def create(artist)
     query = "INSERT INTO artists (name, genre) VALUES ('#{artist.name}', '#{artist.genre}');"
     DatabaseConnection.exec_params(query, nil)
-
   end
 
   def find(id)
@@ -25,6 +24,7 @@ class ArtistRepository
   end
 
   def delete(artist)
-    
+    query = "DELETE FROM artists WHERE id = '#{artist.id}';"
+    result = DatabaseConnection.exec_params(query, nil)
   end
 end
