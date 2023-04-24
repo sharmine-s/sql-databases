@@ -203,11 +203,13 @@ artists = repo.all
 
 artists.length # =>  2
 
-artists[0].id # =>  1
+artists[0].id # =>  '1'
 artists[0].name # =>  'Fleetwood Mac'
 artists[0].genre # =>  'Rock'
 
-artists[1].id # =>  2
+## these methods are the accessors from the Artist class
+
+artists[1].id # =>  '2'
 artists[1].name # =>  'Ariana Grande'
 artists[1].genre # =>  'Pop'
 

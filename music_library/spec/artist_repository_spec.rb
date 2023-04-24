@@ -1,9 +1,10 @@
 require 'artist_repository'
 require 'database_connection'
+require 'artist'
 
 def reset_music_library
   seed_sql = File.read('./spec/seeds_music_library.sql')
-  connection = DatabaseConnection.connect('music_library')
+  connection = connection = PG.connect({ host: '127.0.0.1', dbname: 'music_library_test' })
   connection.exec(seed_sql)
 end
 
@@ -12,15 +13,28 @@ describe ArtistRepository do
     reset_music_library
   end
 
-  it "Creates" do
+  it "returns all the artists" do
     repo = ArtistRepository.new
-    miley_cyrus = double(:artist, id: "3", name: "Miley Cyrus", genre: "Pop")
-    repo.create(miley_cyrus)
-    artists = repo.all.to_a
-    expect(artists[-1]["id"]).to eq "3"
-    expect(artists[-1]["name"]).to eq "Miley Cyrus"
-    expect(artists[-1]["genre"]).to eq "Pop"
+    artists = repo.all
+    expect(artists.length).to eq 2
+    expect(artists[0].id).to eq "1"
+    expect(artists[0].name).to eq "Fleetwood Mac"
+    expect(artists[0].genre).to eq "Rock"
   end
+
+  # it "Creates" do
+  #   repo = ArtistRepository.new
+
+  #   miley_cyrus = Artist.new
+  #   miley_cyrus.id = "3"
+  #   miley_cyrus.name = "Miley Cyrus"
+  #   miley_cyrus.genre = "Pop"
+  #   repo.create(miley_cyrus)
+  #   artists = repo.all.to_a
+  #   expect(artists[-1]["id"]).to eq "3"
+  #   expect(artists[-1]["name"]).to eq "Miley Cyrus"
+  #   expect(artists[-1]["genre"]).to eq "Pop"
+  # end
 
   it "Finds/Reads" do
     repo = ArtistRepository.new

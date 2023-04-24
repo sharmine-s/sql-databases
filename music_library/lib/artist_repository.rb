@@ -1,9 +1,23 @@
-require 'database_connection'
+require_relative './artist'
+require_relative './database_connection'
 
 class ArtistRepository
   def all
     query = "SELECT id, name, genre FROM artists;"
-    DatabaseConnection.exec_params(query, nil).to_a
+    result = DatabaseConnection.exec_params(query, [])
+
+    artists = []
+
+    result.each { |record|
+      artist = Artist.new
+      artist.id = record['id']
+      artist.name = record['name']
+      artist.genre = record['genre']
+
+      artists << artist
+    }
+
+    return artists
   end
   
   def create(artist)
