@@ -22,19 +22,19 @@ describe ArtistRepository do
     expect(artists[0].genre).to eq "Rock"
   end
 
-  # it "Creates" do
-  #   repo = ArtistRepository.new
-
-  #   miley_cyrus = Artist.new
-  #   miley_cyrus.id = "3"
-  #   miley_cyrus.name = "Miley Cyrus"
-  #   miley_cyrus.genre = "Pop"
-  #   repo.create(miley_cyrus)
-  #   artists = repo.all.to_a
-  #   expect(artists[-1]["id"]).to eq "3"
-  #   expect(artists[-1]["name"]).to eq "Miley Cyrus"
-  #   expect(artists[-1]["genre"]).to eq "Pop"
-  # end
+  it "Creates" do
+    miley_cyrus = Artist.new
+    miley_cyrus.id = "3"
+    miley_cyrus.name = "Miley Cyrus"
+    miley_cyrus.genre = "Pop"
+    repo = ArtistRepository.new
+    repo.create(miley_cyrus)
+    artists = repo.all
+    expect(artists.length).to eq 3
+    expect(artists[-1].id).to eq "3"
+    expect(artists[-1].name).to eq "Miley Cyrus"
+    expect(artists[-1].genre).to eq "Pop"
+  end
 
   it "Finds/Reads" do
     repo = ArtistRepository.new
