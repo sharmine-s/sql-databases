@@ -22,23 +22,23 @@ class ArtistRepository
   
   def create(artist)
     query = "INSERT INTO artists (name, genre) VALUES ('#{artist.name}', '#{artist.genre}');"
-    DatabaseConnection.exec_params(query, nil)
+    DatabaseConnection.exec_params(query, [])
   end
 
   def find(id)
     query = "SELECT * FROM artists WHERE id = '#{id}';"
-    result = DatabaseConnection.exec_params(query, nil).to_a
+    result = DatabaseConnection.exec_params(query, []).to_a
     return result[0]
   end
 
   def update(artist)
     query = "UPDATE artists SET name = '#{artist.name}', genre = '#{artist.genre}' WHERE id = '#{artist.id}';"
-    result = DatabaseConnection.exec_params(query, nil)
+    result = DatabaseConnection.exec_params(query, [])
     return find(artist.id)
   end
 
   def delete(artist)
     query = "DELETE FROM artists WHERE id = '#{artist.id}';"
-    result = DatabaseConnection.exec_params(query, nil)
+    result = DatabaseConnection.exec_params(query, [])
   end
 end

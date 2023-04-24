@@ -45,7 +45,10 @@ describe ArtistRepository do
   end
 
   it "Updates" do
-    miley_cyrus = double(:artist, id: "2", name: "Miley Cyrus", genre: "Pop")
+    miley_cyrus = Artist.new
+    miley_cyrus.id = "2"
+    miley_cyrus.name = "Miley Cyrus"
+    miley_cyrus.genre = "Pop"
     repo = ArtistRepository.new
     artist = repo.update(miley_cyrus)
     expect(artist["id"]).to eq "2"
@@ -54,7 +57,10 @@ describe ArtistRepository do
   end
 
   it "Deletes" do
-    miley_cyrus = double(:artist, id: "3", name: "Miley Cyrus", genre: "Pop")
+    miley_cyrus = Artist.new
+    miley_cyrus.id = "2"
+    miley_cyrus.name = "Miley Cyrus"
+    miley_cyrus.genre = "Pop"
     repo = ArtistRepository.new
     artist = repo.create(miley_cyrus)
     artists = repo.all
