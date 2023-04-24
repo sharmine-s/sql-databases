@@ -12,7 +12,6 @@ describe ArtistRepository do
     reset_music_library
   end
 
-
   it "Creates" do
     repo = ArtistRepository.new
     miley_cyrus = double(:artist, id: "3", name: "Miley Cyrus", genre: "Pop")
@@ -21,5 +20,13 @@ describe ArtistRepository do
     expect(artists[-1]["id"]).to eq "3"
     expect(artists[-1]["name"]).to eq "Miley Cyrus"
     expect(artists[-1]["genre"]).to eq "Pop"
+  end
+
+  it "Finds/Reads" do
+    repo = ArtistRepository.new
+    artist = repo.find(1)
+    expect(artist["id"]).to eq "1"
+    expect(artist["name"]).to eq "Fleetwood Mac"
+    expect(artist["genre"]).to eq "Rock"
   end
 end
