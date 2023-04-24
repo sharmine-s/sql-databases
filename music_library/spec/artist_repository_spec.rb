@@ -43,6 +43,8 @@ describe ArtistRepository do
     miley_cyrus = double(:artist, id: "3", name: "Miley Cyrus", genre: "Pop")
     repo = ArtistRepository.new
     artist = repo.create(miley_cyrus)
+    artists = repo.all
+    expect(artists.length).to eq 3
     artist = repo.delete(miley_cyrus)
     artists = repo.all
     expect(artists.length).to eq 2
