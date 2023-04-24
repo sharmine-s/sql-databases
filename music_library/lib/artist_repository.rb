@@ -19,7 +19,9 @@ class ArtistRepository
   end
 
   def update(artist)
-    
+    query = "UPDATE artists SET name = '#{artist.name}', genre = '#{artist.genre}' WHERE id = '#{artist.id}';"
+    result = DatabaseConnection.exec_params(query, nil)
+    return find(artist.id)
   end
 
   def delete(artist)

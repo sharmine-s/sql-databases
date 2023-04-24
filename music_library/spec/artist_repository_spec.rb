@@ -29,4 +29,13 @@ describe ArtistRepository do
     expect(artist["name"]).to eq "Fleetwood Mac"
     expect(artist["genre"]).to eq "Rock"
   end
+
+  it "Updates" do
+    miley_cyrus = double(:artist, id: "2", name: "Miley Cyrus", genre: "Pop")
+    repo = ArtistRepository.new
+    artist = repo.update(miley_cyrus)
+    expect(artist["id"]).to eq "2"
+    expect(artist["name"]).to eq "Miley Cyrus"
+    expect(artist["genre"]).to eq "Pop"
+  end
 end
