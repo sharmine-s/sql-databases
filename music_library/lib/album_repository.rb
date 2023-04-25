@@ -20,5 +20,10 @@ class AlbumRepository
 
     return albums
   end
+
+  def find(id)
+    query = "SELECT * FROM albums WHERE id = '#{id}';"
+    result = DatabaseConnection.exec_params(query, [])[0]
+  end
 end
 

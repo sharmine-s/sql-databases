@@ -23,4 +23,12 @@ describe AlbumRepository do
     expect(albums[0].artist_id).to eq "1"
   end
 
+  it "finds a specific album" do
+    repo = AlbumRepository.new
+    album = repo.find(1)
+    expect(album["id"]).to eq "1"
+    expect(album["title"]).to eq "Rumours"
+    expect(album["release_year"]).to eq "1977"
+    expect(album["artist_id"]).to eq "1"
+  end
 end
