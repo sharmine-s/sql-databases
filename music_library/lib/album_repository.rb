@@ -18,7 +18,7 @@ class AlbumRepository
       albums << album
     }
 
-    return albums # returns array of objects
+    return albums # returns array of hashes, and in each hash is an object
   end
 
   def find(id)
