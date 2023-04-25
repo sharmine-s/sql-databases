@@ -7,7 +7,7 @@ If seed data is provided (or you already created it), you can skip this step.
 -- EXAMPLE
 -- (file: spec/seeds_{table_name}.sql)
 
--- Write your SQL seed here. 
+-- Write your SQL seed here.
 
 -- First, you'd need to truncate the table - this is so our table is emptied between each test run,
 -- so we can start with a fresh state.
@@ -37,19 +37,25 @@ class Artist
 end
 
 # Repository class
+
 # (in lib/artist_repository.rb)
+
 class ArtistRepository
 end
 
 # Table name: albums
 
 # Model class
+
 # (in lib/album.rb)
+
 class Album
 end
 
 # Repository class
+
 # (in lib/album_repository.rb)
+
 class AlbumRepository
 end
 
@@ -60,6 +66,7 @@ Define the attributes of your Model class. You can usually map the table columns
 # Table name: artists
 
 # Model class
+
 # (in lib/artist.rb)
 
 class Artist
@@ -70,6 +77,7 @@ end
 # Table name: albums
 
 # Model class
+
 # (in lib/album.rb)
 
 class Album
@@ -78,11 +86,17 @@ class Album
 end
 
 # The keyword attr_accessor is a special Ruby feature
-# which allows us to set and get attributes on an object,
-# here's an example:
+
+# which allows us to set and get attributes on an object
+
+# here's an example
+
 #
+
 # artist = artist.new
+
 # artist.name = 'Jo'
+
 # artist.name
 
 5. Define the Repository Class interface
@@ -94,12 +108,15 @@ Using comments, define the method signatures (arguments and return value) and wh
 # Table name: artists
 
 # Repository class
+
 # (in lib/artist_repository.rb)
 
 class ArtistRepository
 
-  # Selecting all records
-  # No arguments
+# Selecting all records
+
+# No arguments
+
   def all
     # Executes the SQL query:
     # SELECT id, name, genre FROM artists;
@@ -107,8 +124,10 @@ class ArtistRepository
     # Returns an array of Artist objects.
   end
 
-  # Gets a single record by its ID
-  # One argument: the id (number)
+# Gets a single record by its ID
+
+# One argument: the id (number)
+
   def find(id)
     # Executes the SQL query:
     # SELECT id, name, genre FROM artists WHERE id = $1;
@@ -116,7 +135,7 @@ class ArtistRepository
     # Returns a single Artist object.
   end
 
-  # Add more methods below for each operation you'd like to implement.
+# Add more methods below for each operation you'd like to implement
 
   def create(artist)
     # Executes the SQL query:
@@ -138,16 +157,18 @@ class ArtistRepository
   end
 end
 
-
 # Table name: albums
 
 # Repository class
+
 # (in lib/album_repository.rb)
 
 class AlbumRepository
 
-  # Selecting all records
-  # No arguments
+# Selecting all records
+
+# No arguments
+
   def all
     # Executes the SQL query:
     # SELECT id, title, release_year, artist_id FROM albums;
@@ -155,8 +176,10 @@ class AlbumRepository
     # Returns an array of Album objects.
   end
 
-  # Gets a single record by its ID
-  # One argument: the id (number)
+# Gets a single record by its ID
+
+# One argument: the id (number)
+
   def find(id)
     # Executes the SQL query:
     # SELECT id, title, release_year, artist_id FROM albums WHERE id = $1;
@@ -164,7 +187,7 @@ class AlbumRepository
     # Returns a single Album object.
   end
 
-  # Add more methods below for each operation you'd like to implement.
+# Add more methods below for each operation you'd like to implement
 
   def create(album)
     # Executes the SQL query:
@@ -186,7 +209,6 @@ class AlbumRepository
   end
 end
 
-
 6. Write Test Examples
 
 Write Ruby code that defines the expected behaviour of the Repository class, following your design from the table written in step 5.
@@ -194,7 +216,9 @@ Write Ruby code that defines the expected behaviour of the Repository class, fol
 These examples will later be encoded as RSpec tests.
 
 # Artists
+
 # 1
+
 # Get all artists
 
 repo = ArtistRepository.new
@@ -214,6 +238,7 @@ artists[1].name # =>  'Ariana Grande'
 artists[1].genre # =>  'Pop'
 
 # 2
+
 # Get a single artist
 
 repo = ArtistRepository.new
@@ -225,6 +250,7 @@ artist.name # => 'Fleetwood Mac'
 artist.genre # => 'Rock'
 
 # 3
+
 # Create a single artist
 
 miley_cyrus = double(:artist, name: "Miley Cyrus", genre: "Pop")
@@ -238,6 +264,7 @@ artist.name # => 'Miley Cyrus'
 artist.genre # => 'Pop'
 
 # 4
+
 # Update a single artist
 
 miley_cyrus = double(:artist, id: "3", name: "Miley Cyrus", genre: "Rock")
@@ -251,6 +278,7 @@ artist.name # => 'Miley Cyrus'
 artist.genre # => 'Rock'
 
 # 5
+
 # Deletes a single artist
 
 miley_cyrus = double(:artist, id: "3")
@@ -263,9 +291,10 @@ artists = repo.all
 
 artists.length # =>  2
 
-
 # Albums
+
 # 1
+
 # Get all albums
 
 repo = AlbumRepository.new
@@ -285,6 +314,7 @@ albums[1].release_year # =>  '2016'
 albums[1].artist_id # =>  '2'
 
 # 2
+
 # Get a single album
 
 repo = AlbumRepository.new
@@ -297,6 +327,7 @@ album.release_year # => '1977'
 album.artist_id # => '1'
 
 # 3
+
 # Create a single album
 
 tusk = double(:artist, title: "Tusk", release_year: "1979", artist_id: "1")
@@ -311,6 +342,7 @@ album.release_year # => '1979'
 album.artist_id # => '1'
 
 # 4
+
 # Update a single album
 
 tusk = double(:artist, id: "3", title: "Another Album Name", release_year: "1979", artist_id: "1")
@@ -322,6 +354,7 @@ album = repo.update(tusk)
 album.title # => 'Another Album Name'
 
 # 5
+
 # Deletes a single album
 
 tusk = double(:artist, id: "3")
@@ -333,7 +366,6 @@ album = repo.delete(tusk)
 albums = repo.all
 
 albums.length # =>  2
-
 
 7. Reload the SQL seeds before each test run
 
@@ -350,9 +382,10 @@ def reset_artists_table
 end
 
 describe ArtistRepository do
-  before(:each) do 
+  before(:each) do
     reset_artist_table
   end
 
-  # (your tests will go here).
+# (your tests will go here)
+
 end
