@@ -18,12 +18,11 @@ class AlbumRepository
       albums << album
     }
 
-    return albums
+    return albums # returns array of objects
   end
 
   def find(id)
     query = "SELECT * FROM albums WHERE id = '#{id}';"
-    result = DatabaseConnection.exec_params(query, [])[0]
+    DatabaseConnection.exec_params(query, [])[0] # returns first object
   end
 end
-
