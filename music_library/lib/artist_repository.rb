@@ -21,8 +21,9 @@ class ArtistRepository
   end
   
   def create(artist)
-    query = "INSERT INTO artists (name, genre) VALUES ('#{artist.name}', '#{artist.genre}');"
-    DatabaseConnection.exec_params(query, [])
+    query = "INSERT INTO artists (name, genre) VALUES ($1, $2);"
+    params = [artist.name, artist.genre]
+    DatabaseConnection.exec_params(query, params)
   end
 
   def find(id)
@@ -39,13 +40,14 @@ class ArtistRepository
   end
 
   def update(artist)
-    query = "UPDATE artists SET name = '#{artist.name}', genre = '#{artist.genre}' WHERE id = '#{artist.id}';"
-    result = DatabaseConnection.exec_params(query, [])
-    return find(artist.id)
+    query = "UPDATE artists SET name = $1, genre = $2 WHERE id = $3;"
+    params = [artist.name, artist.genre, artist.id]
+    DatabaseConnection.exec_params(query, params)
   end
 
   def delete(artist)
-    query = "DELETE FROM artists WHERE id = '#{artist.id}';"
-    result = DatabaseConnection.exec_params(query, [])
+    query = "DELETE FROM artists WHERE id = $1;"
+    params = [artist.id]
+    DatabaseConnection.exec_params(query, params)
   end
 end

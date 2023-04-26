@@ -24,16 +24,14 @@ describe ArtistRepository do
 
   it "Creates" do
     miley_cyrus = Artist.new
-    miley_cyrus.id = "3"
     miley_cyrus.name = "Miley Cyrus"
     miley_cyrus.genre = "Pop"
     repo = ArtistRepository.new
     repo.create(miley_cyrus)
     artists = repo.all
-    expect(artists.length).to eq 3
-    expect(artists[-1].id).to eq "3"
-    expect(artists[-1].name).to eq "Miley Cyrus"
-    expect(artists[-1].genre).to eq "Pop"
+    expect(artists.last.id).to eq "3"
+    expect(artists.last.name).to eq "Miley Cyrus"
+    expect(artists.last.genre).to eq "Pop"
   end
 
   it "Finds/Reads" do
@@ -52,7 +50,8 @@ describe ArtistRepository do
     miley_cyrus.name = "Miley Cyrus"
     miley_cyrus.genre = "Pop"
     repo = ArtistRepository.new
-    artist = repo.update(miley_cyrus)
+    repo.update(miley_cyrus)
+    artist = repo.find(2)
     expect(artist.id).to eq "2"
     expect(artist.name).to eq "Miley Cyrus"
     expect(artist.genre).to eq "Pop"
