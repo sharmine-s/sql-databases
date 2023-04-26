@@ -22,3 +22,4 @@ album_repository.all.each do |album|
 end
 
 p artist_repository.find(1).name
+p album_repository.find(2).title
