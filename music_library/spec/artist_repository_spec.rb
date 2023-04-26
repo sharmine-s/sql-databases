@@ -39,9 +39,8 @@ describe ArtistRepository do
   it "Finds/Reads" do
     repo = ArtistRepository.new
     artist = repo.find(1)
-    expect(artist["id"]).to eq "1"
-    expect(artist["name"]).to eq "Fleetwood Mac"
-    expect(artist["genre"]).to eq "Rock"
+    expect(artist.name).to eq "Fleetwood Mac"
+    expect(artist.genre).to eq "Rock"
   end
 
   it "Updates" do
@@ -51,9 +50,9 @@ describe ArtistRepository do
     miley_cyrus.genre = "Pop"
     repo = ArtistRepository.new
     artist = repo.update(miley_cyrus)
-    expect(artist["id"]).to eq "2"
-    expect(artist["name"]).to eq "Miley Cyrus"
-    expect(artist["genre"]).to eq "Pop"
+    expect(artist.id).to eq "2"
+    expect(artist.name).to eq "Miley Cyrus"
+    expect(artist.genre).to eq "Pop"
   end
 
   it "Deletes" do

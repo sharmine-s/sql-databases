@@ -26,8 +26,16 @@ class ArtistRepository
   end
 
   def find(id)
-    query = "SELECT * FROM artists WHERE id = '#{id}';"
-    result = DatabaseConnection.exec_params(query, [])[0]
+    query = "SELECT * FROM artists WHERE id = $1;"
+    param = [id]
+    result = DatabaseConnection.exec_params(query, param)[0]
+    
+    artist = Artist.new
+    artist.id = result["id"]
+    artist.name = result["name"]
+    artist.genre = result["genre"]
+
+    return artist
   end
 
   def update(artist)
