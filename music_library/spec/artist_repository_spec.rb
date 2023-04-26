@@ -41,6 +41,9 @@ describe ArtistRepository do
     artist = repo.find(1)
     expect(artist.name).to eq "Fleetwood Mac"
     expect(artist.genre).to eq "Rock"
+    artist = repo.find(2)
+    expect(artist.name).to eq "Ariana Grande"
+    expect(artist.genre).to eq "Pop"
   end
 
   it "Updates" do
