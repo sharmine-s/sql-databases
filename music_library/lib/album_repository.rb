@@ -22,7 +22,16 @@ class AlbumRepository
   end
 
   def find(id)
-    query = "SELECT * FROM albums WHERE id = '#{id}';"
-    DatabaseConnection.exec_params(query, [])[0] # returns first object
+    query = "SELECT * FROM albums WHERE id = $1;"
+    param = [id]
+    result = DatabaseConnection.exec_params(query, param)[0] # returns first object
+
+    album = Album.new
+    album.id = result["id"]
+    album.title = result["title"]
+    album.release_year = result["release_year"]
+    album.artist_id = result["artist_id"]
+
+    return album
   end
 end
