@@ -34,4 +34,29 @@ describe AlbumRepository do
     expect(album.release_year).to eq "2016"
     expect(album.artist_id).to eq "2"
   end
+
+  it "creates a new album" do
+    tusk = Album.new
+    tusk.id = '3'
+    tusk.title = 'Tusk'
+    tusk.release_year = '1979'
+    tusk.artist_id = '1'
+    repo = AlbumRepository.new
+    repo.create(tusk)
+    alb = repo.find(3)
+    expect(alb.id).to eq '3'
+    expect(alb.title).to eq 'Tusk'
+    expect(alb.release_year).to eq '1979'
+    expect(alb.artist_id).to eq '1'
+
+    repository = AlbumRepository.new
+
+    album = Album.new
+    album.title = 'Trompe le Monde'
+    album.release_year = 1991
+    album.artist_id = 1
+    repository.create(album)
+    all_albums = repository.all
+    expect(all_albums[-1].title).to eq 'Trompe le Monde'
+  end
 end
